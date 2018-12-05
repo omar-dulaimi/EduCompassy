@@ -6,6 +6,11 @@ const port = process.env.PORT || 5000;
 
 const apis = require('./apis/index');
 
+var bcrypt = require('bcrypt-nodejs');
+
+var session = require('express-session');
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
