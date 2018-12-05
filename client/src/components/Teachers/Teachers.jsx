@@ -23,7 +23,6 @@ class Teachers extends Component {
                         <p className="lead"> Something  Something  Something  Something  Something  Something </p>
                         <div className="dropdown myDropDown">
                            <h4> <span>Dashboard</span></h4>
-
                         </div>                
                         <div className="dropdown myDropDown">
                             <h5><span>Classes</span></h5>
@@ -68,24 +67,18 @@ class Teachers extends Component {
 
                       <Route exact path="/events" component={Events} />  
                         <Route exact path="/marks" component={Marks} />                    
-                        <Route exact path="/WeeklyReports" component={WeeklyReports} />                    
-
+                        <Route exact path="/WeeklyReports" component={WeeklyReports} />
                     </div>  
-                </Router>
-                        
+                </Router>       
                 <div>
                 <TimeTable/>
-                </div> 
-
-
+                </div>
                 <div>
                     <Events />
                     <HomeWork/>
                     <Marks/>
                     <WeeklyReports/>
-
-                </div> 
-                
+                </div>
             </Fragment>
         );
     }
