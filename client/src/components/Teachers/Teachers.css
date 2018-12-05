@@ -107,12 +107,13 @@ a > p:hover {
 /* a {
     font-size: 30px;
 } */
-/* .homeworkSelect {
+.homeworkSelect {
    margin: auto;
   width: 50%;
   border: 3px solid none;
   padding: 10px;
-} */
+}
+
 /* div > .homeworkImg{
   max-width: 75%;
   max-height: 70%;

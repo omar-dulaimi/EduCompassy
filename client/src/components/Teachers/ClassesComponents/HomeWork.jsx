@@ -17,22 +17,6 @@ class HomeWork extends Component {
                                 </ol>
                             </nav>
                             <div>
-                                <div className="btn-group">
-                                    <button type="button" className="btn btn-primary">Select Subject </button>
-                                    <button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    </button>
-                                    <div className="dropdown-menu">
-                                        <a className="dropdown-item" href="#">Math</a>
-                                        <a className="dropdown-item" href="#">Science</a>
-                                        <a className="dropdown-item" href="#">Art</a>
-                                        <a className="dropdown-item" href="#">History</a>
-                                        <a className="dropdown-item" href="#">English</a>
-                                        <a className="dropdown-item" href="#">Music</a>
-
-                                        <div className="dropdown-divider" />
-                                        <a className="dropdown-item" href="#">More </a>
-                                    </div>
-                                </div>
                                 <div >
                                     <button type="button " className="btn btn-warning hwColor " data-toggle="modal" data-target=".bd-example-modal-lg">Math</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -49,7 +33,7 @@ class HomeWork extends Component {
                                                                 <p><strong>Title :</strong></p>
                                                                 <p><strong>Page :</strong></p>
                                                                 <p><strong>Resources :</strong></p>
-                                                        <h6 className="card-text">For more details chatting the teacher!</h6>
+                                                        <h6 className="card-text">For more details about your kid please chatting the teacher!</h6>
                                                         <a className="btn btn-primary">Chat</a>
                                                     </div>
                                                     <div className="card-footer text-muted">
