@@ -8,10 +8,11 @@ class TimeTable extends Component {
     render() {
         return (
             <Fragment>
+            
                 <div className="timetable">
                 <h1 className="myHeading1">TimeTable Component</h1>
+                    <p className="lead myHeading1">   Something  Something  Something </p>
                     <div>
-                        <h1 className="myHeading1">My Timetable</h1>
                         <table className="myTimetable">
                             <thead>
                                 <tr>
