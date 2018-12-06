@@ -15,17 +15,21 @@ class Marks extends Component {
                         </div>
                         <p className="lead"> Something  Something  Something  Something  Something  Something </p>  
                     </div>
-                    <div className="alert alert-light homeworkSelect" role="alert">
-                        <p className="myHeading1"> <strong>Student's Name :</strong> Name </p>
-                        <p className="myHeading1"><strong>Student's Grade :</strong> Grade</p>
-                        <p className="myHeading1"><strong>Student's ID :</strong> ID</p>
-                    </div>
+                    
+                    <div className="alert alert-light " role="alert">
+                        <p> <strong>Student's Name :</strong> Name </p>
+                        <p><strong>Student's Grade :</strong> Grade</p>
+                        <p><strong>Student's ID :</strong> ID</p>
+
+
+
+
                         <div className="btn-group ">
                             <button type="button" className="btn btn-primary ">Select Subject </button>
                             <button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </button>
                             <div className="dropdown-menu">
-                                <a className="dropdown-item" href="#">Math</a>
+                                <a className="dropdown-item " href="#">Math</a>
                                 <a className="dropdown-item" href="#">Science</a>
                                 <a className="dropdown-item" href="#">Art</a>
                                 <a className="dropdown-item" href="#">History</a>
@@ -36,6 +40,7 @@ class Marks extends Component {
                                 <a className="dropdown-item" href="#">More </a>
                             </div>
                         </div>
+                    </div>
                                  
                 </div>
             </Fragment>

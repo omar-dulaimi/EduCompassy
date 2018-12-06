@@ -17,8 +17,8 @@ class HomeWork extends Component {
                                 </ol>
                             </nav>
                             <div>
-                                <div >
-                                    <button type="button " className="btn btn-warning hwColor " data-toggle="modal" data-target=".bd-example-modal-lg">Math</button>
+                                <div>
+                                    <button type="button " className="btn btn-warning myDropDown " data-toggle="modal" data-target=".bd-example-modal-lg">Math</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
@@ -44,7 +44,7 @@ class HomeWork extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">Science</button>
+                                    <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">Science</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-2} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
@@ -52,7 +52,7 @@ class HomeWork extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">I.T</button>
+                                    <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">I.T</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
@@ -60,7 +60,7 @@ class HomeWork extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">History</button>
+                                    <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">History</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
@@ -69,7 +69,7 @@ class HomeWork extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">Music</button>
+                                    <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">Music</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
@@ -77,7 +77,7 @@ class HomeWork extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" className="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">English</button>
+                                    <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">English</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
