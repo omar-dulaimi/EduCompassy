@@ -12,7 +12,7 @@ class Parents extends Component {
         return (
             <Fragment>
                  <Router>
-                     <div>
+                    <div>
                 <form>
 
                 <div>
@@ -40,12 +40,38 @@ class Parents extends Component {
                             </div>
                         </div>                 */}
                         <div className="dropdown myDropDown">
-                            <h5><span>Children</span></h5>
+                      
+                         <h5><span>Children </span></h5>
+                         <ul>
                             <div className="dropdown-content myDropDown-content">
-                                <a><p>Ahamed</p></a> 
-                                <a><p>Khalid</p></a>
+                            
+                            <div className="dropdown-submenu">
+                            
+                                <li><a><p>Ahamed</p></a>
+                                <ul>
+                                <div className="dropdown myDropDown">
+                                <li><a><p>TimeTable</p></a></li>
+                              
+                                <li><a><p>Events</p></a></li>
+                                <li><a><p>Marks</p></a></li>
+
+                                
+                                </div>
+                                </ul>
+
+                                </li>
+                                 
+                               
+                                
+                                </div>
+                             
+
+                                <li><a><p>Khalid</p></a></li>
+                              
                               
                             </div>
+                            </ul>
+                         
                         </div>
                         <div className="dropdown myDropDown">
                             <h5><span>Info</span></h5>
@@ -54,9 +80,7 @@ class Parents extends Component {
                                 <Link to="/events"><p>Events</p></Link>
                                 <Link to="marks"><p>Marks</p></Link>
                             </div>
-                            <Route exact path="/timetable" component={TimeTable} />
-                            <Route exact path="/events" component={Events} />
-                            <Route exact path="/marks" component={Marks} />
+                            
                         </div>     
                         <div className="dropdown myDropDown">
                             <h5><span>Chatting</span></h5>
@@ -66,13 +90,49 @@ class Parents extends Component {
                                 <a><p>Omer:Arabic</p></a>
                             </div>
                         </div>
+                        <a  className="  mybtn" data-toggle="modal" data-target="#exampleModal" >Complians</a>
+                    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLabel">New message</h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div className="modal-body">
+
+                                    <div className="form-group">
+                                        <label htmlFor="Parentes-name" className="col-form-label">Name</label>
+                                        <input type="text" className="form-control" id="Parentes-name" required autoFocus />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="message-text" className="col-form-label">Title</label>
+                                        <input type="text" className="form-control" id="Title-name" />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="message-text" className="col-form-label">Message:</label>
+                                        <textarea className="form-control" id="message-text"></textarea>
+                                    </div>
+
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-info">Send message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                    </div>
 
                    </div>
                 
                 
                         </form>
-                      
+                        <Route exact path="/timetable" component={TimeTable} />
+                            <Route exact path="/events" component={Events} />
+                            <Route exact path="/marks" component={Marks} />
                        
                         </div>
                         </Router>
@@ -83,7 +143,7 @@ class Parents extends Component {
 
 }
 
-                {/* <form>
+                {/* <form></form>
                     <div className="btn-group">
                         <button type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Children
