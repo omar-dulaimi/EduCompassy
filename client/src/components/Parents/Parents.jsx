@@ -12,13 +12,78 @@ class Parents extends Component {
         return (
             <Fragment>
                  <Router>
-                 <div>
-                
+                     <div>
+                <form>
 
                 <div>
                     <h1>Parents Page:</h1>
                 </div>
-                <form>
+               
+              
+                
+                <div className="jumbotron jumbotron-fluid teachers">
+                    <div className="container">
+                       
+                       
+                        <div className="dropdown myDropDown">
+                           <h4> <span>Dashboard</span></h4>
+
+                        </div>                
+                        {/* <div className="dropdown myDropDown">
+                            <h5><span>Classes</span></h5>
+                            <div className="dropdown-content myDropDown-content">
+                                <Link to="/TimeTable"><p>TimeTable</p></Link>
+                                <Link to="/HomeWork"><p>Homework</p></Link>
+                                <Link to="/Marks"><p>Student's Marks</p></Link>
+                                <Link to="/WeeklyReports"><p>Weekly Reports</p></Link>
+                                <Link to="/Events"><p>Events</p></Link>
+                            </div>
+                        </div>                 */}
+                        <div className="dropdown myDropDown">
+                            <h5><span>Children</span></h5>
+                            <div className="dropdown-content myDropDown-content">
+                                <a><p>Ahamed</p></a> 
+                                <a><p>Khalid</p></a>
+                              
+                            </div>
+                        </div>
+                        <div className="dropdown myDropDown">
+                            <h5><span>Info</span></h5>
+                            <div className="dropdown-content myDropDown-content">
+                                <Link to="/timetable"><p>TimeTable</p></Link>
+                                <Link to="/events"><p>Events</p></Link>
+                                <Link to="marks"><p>Marks</p></Link>
+                            </div>
+                            <Route exact path="/timetable" component={TimeTable} />
+                            <Route exact path="/events" component={Events} />
+                            <Route exact path="/marks" component={Marks} />
+                        </div>     
+                        <div className="dropdown myDropDown">
+                            <h5><span>Chatting</span></h5>
+                            <div className="dropdown-content myDropDown-content">
+                                <a><p>Sarah:English</p></a>
+                                <a><p>Khalid:Math</p></a>
+                                <a><p>Omer:Arabic</p></a>
+                            </div>
+                        </div>
+                   </div>
+
+                   </div>
+                
+                
+                        </form>
+                      
+                       
+                        </div>
+                        </Router>
+               
+            </Fragment>
+        );
+    }
+
+}
+
+                {/* <form>
                     <div className="btn-group">
                         <button type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Children
@@ -102,7 +167,7 @@ class Parents extends Component {
             </Fragment>
         );
     }
-}
+}  */}
 
 export default Parents;
             
