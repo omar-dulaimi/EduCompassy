@@ -55,6 +55,22 @@ app.get('/S_ListAllAdmins', (req, res) => {
 
 });
 
+var admins = require('./server/admins.js');
+app.post('/S_CreateAdmin', (req, res) => {
+  console.log("Create Admins: ", req.body);
+  admins.createAdmins(req, res, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+
+  });
+
+});
+
 // Omar Code:
 /////////////
 //Get a number fact from API and send it back to client

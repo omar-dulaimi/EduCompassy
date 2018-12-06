@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // Admins Functions: ListAdmins
 import CreateAdmin from './components/Admins/CreateAdmin.jsx';
-// import SelectAdmin from './components/Admins/SelectAdmin.jsx';
+import SearchAdmin from './components/Admins/SearchAdmin.jsx';
 // import UpdateAdmin from './components/Admins/UpdateAdmin.jsx';
 // import DeleteAdmin from './components/Admins/DeleteAdmin.jsx';
 import ListAdmins from './components/Admins/ListAdmins.jsx';
@@ -38,6 +38,8 @@ class Admin extends Component {
                                 <div className="dropdown-content myDropDown-content">
                                     <Link to="/CreateAdmin"><p>Create Admin</p></Link>
                                     <Link to="/ListAdmins"><p>List Admins</p></Link>
+                                    <Link to="/SearchAdmin"><p>Search Admin</p></Link>
+
                                 </div>
                             </div>                
                             <div className="dropdown myDropDown">
@@ -76,6 +78,7 @@ class Admin extends Component {
                         <Route exact path="/Title" component={Title} /> 
                         <Route exact path="/CreateAdmin" component={CreateAdmin} /> 
                         <Route exact path="/ListAdmins" component={ListAdmins} />
+                        <Route exact path="/SearchAdmin" component={SearchAdmin} />
 
                         <Route exact path="/CreateStudent" component={CreateStudent} /> 
                          
