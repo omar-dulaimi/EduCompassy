@@ -31,82 +31,38 @@
 #dashboard {
     position: relative;
 }
-/* div > span:hover {
-    color: !important;
-}  */
+
 a > p:hover {
     color:blueviolet !important;
 }
-
+/*style for complians*/
 .mybtn:hover {
     background-color: white !important;
     color: black !important;
     font-size: 1.25rem !important;
-    font-weight: bold;
+    font-weight: 450%;
    
 }
-/* .myDropDown-content-po :hover {
-    background-color: aqua !important;
-    color: black !important;
-
-} */
-
-/* .dropdown-submenu {
-    position: relative;
-  }
-  
-  .dropdown-submenu > .myDropDown {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: 120px;
-  }
-  
-  .dropdown-submenu:hover > .myDropDown {
-    display: block;
-  }
-  
-  .dropdown-submenu > a:after {
-    content: "";
-    margin-top: 6px;
-    margin-right: -10px;
-    float: right;
-    border-left: 4px solid;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-  } */
-
-
-  /* .myDropDown ul{
-      position: absolute;
-      display:flex;
-  } */
+/*style for children*/
 
   ul li {
 list-style-type: none;
   }
 
-  /* .myDropDown-content .dropdown-submenu li{
-    position: relative;
-  }
-
-  ul .myDropDown li{
-      margin-left: 10px;
-  } */
-
-
   .myDropDown ul ul {
       position: relative;
-      margin-left: 120px;
+      margin-left: 125px;
       top: 0px;
      
   }
-
+/* items in submenu */
   ul .myDropDown {
       display: none;
       position: absolute;
       background-color: aqua;
       color: black !important;
+      width:200px;
+
       line-height: 5px;
       top: -90px;
       left: 50px;
@@ -118,11 +74,12 @@ list-style-type: none;
       display: block;
   }
 
-
-  ul .myDropDown-content a {
+/* items in dropdown menu */
+  ul .myDropDown-content p {
       text-decoration: none;
       width:0px;
       height:25px;
       line-height: 5px;
-      background-color: #4f94e0;
+      background-color: aqua !important;
+     
   }
