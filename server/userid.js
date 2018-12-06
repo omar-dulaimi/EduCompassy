@@ -4,8 +4,8 @@ var queryuserid = require('../db/mysql/query/queryuserid.js');
 
 module.exports = {
     queryUserID: function (req, res, callback) {
-        queryuserid.selectuseremail(req.body.inputEmail, function (err, sqlResult) {
-            if (err) {
+        queryuserid.selectuseremail(req.body.inputEmail, function (err, errType, sqlResult) {
+            if (errType===1) {
                 
                 var errObj = {
                     // Type 1: DB err
@@ -15,7 +15,8 @@ module.exports = {
                 callback(errObj, null);
             } else {
             
-            if (sqlResult === undefined) {
+            // if (sqlResult === undefined) {
+                if (errType === 2) {
                 var errObj = {
                     // Type 2: User Does not exist.
                     type: 2,

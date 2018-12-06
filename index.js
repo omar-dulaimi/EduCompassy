@@ -22,6 +22,55 @@ app.get('/', (req, res) => {
   );
 });
 
+
+var userid = require('./server/userid.js');
+app.post('/S_signin', (req, res) => {
+  console.log(req.body);
+  userid.queryUserID(req, res, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify({ canLog: false }));
+    } else {
+      console.log('else : Can Log ', sqlResult);
+      res.end(JSON.stringify({ canLog: true }));
+    }
+
+  });
+
+});
+
+var admins = require('./server/admins.js');
+app.get('/S_ListAllAdmins', (req, res) => {
+  console.log(req.body);
+  admins.queryAdmins(req, res, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+
+  });
+
+});
+
+// Omar Code:
+/////////////
+//Get a number fact from API and send it back to client
+app.get('/numberfact', (req, res) => {
+  apis.getNumberFact((err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send({ fact: data });
+    }
+  });
+});
+
+
+/// Testing Routers:
+///////////////////
 app.get('/GetTest1', (req, res) => {
   res.send({ express: 'Hello From Express /GetTest1' });
 });
@@ -37,53 +86,14 @@ app.post('/PostTest1', (req, res) => {
   );
 });
 
-//Get a number fact from API and send it back to client
-app.get('/numberfact', (req, res) => {
-  apis.getNumberFact((err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send({ fact: data });
-    }
-  });
-});
-
-
-// app.post('/user', function (req, res) {
-//   let email = req.body.email;
-
-//   if (email === 'a@a.com') {
-//     res.send('admin');
-//   } else if (email === 'b@b.com') {
-//     res.send('teacher');
-//   } else if (email === 'c@c.com') {
-//     res.send('parent');
-//   } else {
-//     res.send('no such user!');
-//   }
-// });
-
-var userid = require('./server/userid.js');
-app.post('/S_signin', (req, res) => {
-  console.log(req.body);
-  userid.queryUserID(req, res, function (err, sqlResult){
-    if (err.type) {
-      console.log('if (err): ', err);
-      res.end(JSON.stringify({canLog: false}));
-      } else {
-        console.log('else : Can Log ', sqlResult );
-        res.end(JSON.stringify({canLog: true}));
-      }
-
-  });
-  
-});
 
 
 
 
-const SubServer = require('./server/server.js');
 
-SubServer.runAll();
+
+
+
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

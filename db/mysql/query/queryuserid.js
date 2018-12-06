@@ -8,7 +8,7 @@ module.exports = {
             if (err) {
               console.log("Cannot Use Database: EduCompassy");
               console.log(err);
-              callback(err, null)
+              callback(err, 1, null)
             } else {
               console.log("else - body.inputEmail: ", inputEmail)
               var qu1 = `SELECT * FROM userid WHERE email="${inputEmail}"`;
@@ -18,7 +18,7 @@ module.exports = {
                   if (err) {
                     console.log('NotWorking', err);
 
-                    callback(err, null)
+                    callback(err, 2, null)
                   } else {
                     console.log("Result");
                     console.log(result[0]);
