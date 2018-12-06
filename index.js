@@ -6,6 +6,11 @@ const port = process.env.PORT || 5000;
 
 const apis = require('./apis/index');
 
+var bcrypt = require('bcrypt-nodejs');
+
+var session = require('express-session');
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -58,27 +63,20 @@ app.get('/numberfact', (req, res) => {
 //   }
 // });
 
-var queryuserid = require('./db/mysql/query/queryuserid.js');
+var userid = require('./server/userid.js');
 app.post('/S_signin', (req, res) => {
   console.log(req.body);
-  queryuserid.selectuseremail(req.body.inputEmail, function (err, sqlResult) {
-    if (err) {
-      console.log('if (err): NotWorking ', err);
-    } else {
-      console.log(sqlResult)
-      if (sqlResult === undefined) {
-        res.end(JSON.stringify({canLog: false}));
+  userid.queryUserID(req, res, function (err, sqlResult){
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify({canLog: false}));
       } else {
-        console.log("else: sqlResult ", sqlResult.email);
-        if (req.body.inputPassword === sqlResult.password) {
-          res.end(JSON.stringify({canLog: true}));
-        } else {
-          res.end(JSON.stringify({canLog: false}));
-        }
+        console.log('else : Can Log ', sqlResult );
+        res.end(JSON.stringify({canLog: true}));
       }
-      
-    }
+
   });
+  
 });
 
 
