@@ -29,16 +29,7 @@ class Parents extends Component {
                            <h4> <span>Dashboard</span></h4>
 
                         </div>                
-                        {/* <div className="dropdown myDropDown">
-                            <h5><span>Classes</span></h5>
-                            <div className="dropdown-content myDropDown-content">
-                                <Link to="/TimeTable"><p>TimeTable</p></Link>
-                                <Link to="/HomeWork"><p>Homework</p></Link>
-                                <Link to="/Marks"><p>Student's Marks</p></Link>
-                                <Link to="/WeeklyReports"><p>Weekly Reports</p></Link>
-                                <Link to="/Events"><p>Events</p></Link>
-                            </div>
-                        </div>                 */}
+                       
                         <div className="dropdown myDropDown">
                       
                          <h5><span>Children </span></h5>
@@ -50,10 +41,12 @@ class Parents extends Component {
                                 <li><a><p>Ahamed</p></a>
                                 <ul>
                                 <div className="dropdown myDropDown">
-                                <li><a><p>TimeTable</p></a></li>
+                                <li><Link to="/timetable"><p>TimeTable</p></Link></li>
                               
-                                <li><a><p>Events</p></a></li>
-                                <li><a><p>Marks</p></a></li>
+                                <li><Link to="/events"><p>Events</p></Link></li>
+                                <li><Link to="/marks"><p>Marks</p></Link></li>
+                                <li><Link to="/weeklyreports"><p>WeeklyReports</p></Link></li>
+                                <li><Link to="/homework"><p>HomeWork</p></Link></li>
 
                                 
                                 </div>
@@ -66,14 +59,34 @@ class Parents extends Component {
                                 </div>
                              
 
-                                <li><a><p>Khalid</p></a></li>
+                                <div className="dropdown-submenu">
+                            
+                            <li><a><p>Khalid</p></a>
+                            <ul>
+                            <div className="dropdown myDropDown">
+                            <li><Link to="/timetable"><p>TimeTable</p></Link></li>
+                          
+                            <li><Link to="/events"><p>Events</p></Link></li>
+                            <li><Link to="/marks"><p>Marks</p></Link></li>
+                            <li><Link to="/weeklyreports"><p>WeeklyReports</p></Link></li>
+                            <li><Link to="/homework"><p>HomeWork</p></Link></li>
+
+                            
+                            </div>
+                            </ul>
+
+                            </li>
+                             
+                           
+                            
+                            </div>
                               
                               
                             </div>
                             </ul>
                          
                         </div>
-                        <div className="dropdown myDropDown">
+                        {/* <div className="dropdown myDropDown">
                             <h5><span>Info</span></h5>
                             <div className="dropdown-content myDropDown-content">
                                 <Link to="/timetable"><p>TimeTable</p></Link>
@@ -81,7 +94,7 @@ class Parents extends Component {
                                 <Link to="marks"><p>Marks</p></Link>
                             </div>
                             
-                        </div>     
+                        </div>      */}
                         <div className="dropdown myDropDown">
                             <h5><span>Chatting</span></h5>
                             <div className="dropdown-content myDropDown-content">
@@ -90,7 +103,7 @@ class Parents extends Component {
                                 <a><p>Omer:Arabic</p></a>
                             </div>
                         </div>
-                        <a  className="  mybtn" data-toggle="modal" data-target="#exampleModal" >Complians</a>
+                        <a  className="  mybtn" data-toggle="modal" data-target="#exampleModal" >Complaints</a>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
@@ -133,6 +146,8 @@ class Parents extends Component {
                         <Route exact path="/timetable" component={TimeTable} />
                             <Route exact path="/events" component={Events} />
                             <Route exact path="/marks" component={Marks} />
+                            <Route exact path="/weeklyreports" component={WeeklyReports} />
+                            <Route exact path="/homework" component={HomeWork} />
                        
                         </div>
                         </Router>
