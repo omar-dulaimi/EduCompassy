@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -14,13 +16,13 @@ var session = require('express-session');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send(
-    '<h1>This is Express Server Page</h1>\n'
-    + '<h2>Go To:</h2>'
-    + '<a href="http://localhost:3000/">http://localhost:3000/</a>'
-  );
-});
+// app.get('/', (req, res) => {
+//   res.send(
+//     '<h1>This is Express Server Page</h1>\n'
+//     + '<h2>Go To:</h2>'
+//     + '<a href="http://localhost:3000/">http://localhost:3000/</a>'
+//   );
+// });
 
 /*complaints table*/
 var complaints = require('./server/complaints.js');
