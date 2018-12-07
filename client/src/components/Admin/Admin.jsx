@@ -13,9 +13,9 @@ class Admin extends Component {
         return (
             <Fragment>
                 <Router>
-                    <div className="jumbotron jumbotron-fluid teachers">
+                    <div className="jumbotron jumbotron-fluid">
                         <div className="container">
-                            <h1 className="display-4"> <strong>Admin Dashboard</strong></h1>
+                            <h1 className="display-4 mb-4"> <strong>Admin Dashboard</strong></h1>
                             <ul className="nav nav-pills">
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admins</a>
