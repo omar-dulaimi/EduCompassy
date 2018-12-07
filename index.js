@@ -122,31 +122,15 @@ app.get('/numberfact', (req, res) => {
 });
 
 
-/// Testing Routers:
-///////////////////
-app.get('/GetTest1', (req, res) => {
-  res.send({ express: 'Hello From Express /GetTest1' });
-});
+// Heroku Deploy:
 
-app.get('/GetTest2', (req, res) => {
-  res.send({ express: 'Hello From Express /GetTest2' });
-});
-
-app.post('/PostTest1', (req, res) => {
-  console.log(req.body);
-  res.send(
-    { express: `Express Responde to POST request. This is your post: ${req.body.post}` }
-  );
-});
-
-
-
-
-
-
-
-
-
-
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
