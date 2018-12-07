@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import logo from './logo.png';
+import './Header.css';
 
 
 
