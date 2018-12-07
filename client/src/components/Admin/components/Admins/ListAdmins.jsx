@@ -34,27 +34,30 @@ class ListAdmins extends Component {
         return (
             <div>
                 <h1>Admins List:</h1>
-                <div className="">
-                    <table >
-                        <tr>
-                            <th>id</th>
-                            <th>first_name</th>
-                            <th>middle_names</th>
-                            <th>last_name</th>
-                            <th>date_of_birth</th>
-                            <th>date_of_employment</th>
-                            <th>id_number</th>
-                        </tr>
-                        {
-                        this.state.ListAdmins.map((Admin, i) =><tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>
-                    )
-                        }
+                <div className="container">
+                    <table className="table">
+                        <thead className="thead-dark">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Middle Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Date of Birth</th>
+                                <th scope="col">Date of Employment</th>
+                                <th scope="col">ID Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                this.state.ListAdmins.map((Admin, i) => <tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>)
 
+                            }
+                        </tbody>
                     </table>
-                    
+                </div>
 
 
-                    {/* 
+                {/* 
                     `id` INT NOT NULL AUTO_INCREMENT,
                     `first_name` VARCHAR(45) NULL,
                     `middle_names` VARCHAR(45) NULL,
@@ -66,10 +69,9 @@ class ListAdmins extends Component {
                     
                     
                     */}
-                    {/* <p>{this.state}</p>
+                {/* <p>{this.state}</p>
 
                     first_name, middle_names, last_name, date_of_birth, date_of_employment, phone_number, id_number} */}
-                </div>
             </div>
         );
     }
