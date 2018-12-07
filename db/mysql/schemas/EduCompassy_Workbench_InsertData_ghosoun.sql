@@ -20,11 +20,11 @@ INSERT INTO `EduCompassy`.`parents` (`first_name`, `middle_names`, `last_name`, 
 INSERT INTO `EduCompassy`.`parents` (`first_name`, `middle_names`, `last_name`, `date_of_birth`,  `phone_number`, `id_number`) VALUES ('Omar', 'Sami', 'Alkhataiba',  '1983-7-08', '0793015698', '5');
 
 
-INSERT INTO `EduCompassy`.`complian` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-9', '2018-12-9', '2',  '6');
-INSERT INTO `EduCompassy`.`complian` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-10', '2018-12-10', '3',  '4');
-INSERT INTO `EduCompassy`.`complian` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-11', '2018-12-11', '4',  '9');
-INSERT INTO `EduCompassy`.`complian` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-12', '2018-12-12', '5',  '8');
-INSERT INTO `EduCompassy`.`complian` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-13', '2018-12-13', '6',  '7');
+INSERT INTO `EduCompassy`.`complaints` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-9', '2018-12-9', '2',  '6');
+INSERT INTO `EduCompassy`.`complaints` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-10', '2018-12-10', '3',  '4');
+INSERT INTO `EduCompassy`.`complaints` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-11', '2018-12-11', '4',  '9');
+INSERT INTO `EduCompassy`.`complaints` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-12', '2018-12-12', '5',  '8');
+INSERT INTO `EduCompassy`.`complaints` (`date_of_send`, `date_of_process`, `parents_id`, `teacher_id`) VALUES ('2018-12-13', '2018-12-13', '6',  '7');
 
 
 

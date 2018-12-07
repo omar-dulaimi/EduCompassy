@@ -22,6 +22,23 @@ app.get('/', (req, res) => {
   );
 });
 
+/*complaints table*/
+var complaints = require('./server/complaints.js');
+
+app.post('/S_complaints',(req, res) =>{
+  console.log(req.body);
+  complaints.queryComplaints(req, res, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify({ canLog: false }));
+    } else {
+      console.log('else : Can Log ', sqlResult.insertId);
+      res.end(JSON.stringify({ insertId: sqlResult.insertId}));
+    }
+
+  });
+});
+
 /*
  *  Userid Table: 
  */

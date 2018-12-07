@@ -61,7 +61,7 @@ CREATE TABLE `subject` (
 	PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `complian` (
+CREATE TABLE `complaints` (
 	`id` int NOT NULL,
 	`data_of_send` varchar(45),
 	`data_of_process` varchar(45),
