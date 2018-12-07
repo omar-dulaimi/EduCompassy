@@ -33,8 +33,7 @@ class ListAdmins extends Component {
     render() {
         return (
             <div>
-                <h1>Admins List:</h1>
-                <div className="container">
+                <div className="container mt-3">
                     <table className="table">
                         <thead className="thead-dark">
                             <tr>
@@ -50,7 +49,6 @@ class ListAdmins extends Component {
                         <tbody>
                             {
                                 this.state.ListAdmins.map((Admin, i) => <tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>)
-
                             }
                         </tbody>
                     </table>
