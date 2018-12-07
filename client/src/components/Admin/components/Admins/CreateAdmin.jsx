@@ -28,7 +28,7 @@ class CreateAdmin extends Component {
         const body1 = JSON.parse(body)
         // this.setState({ responseToPost: body });
         console.log(body1);
-        await this.setState({
+        this.setState({
             insertId: body1.insertId,
             form_submited: true,
         });
@@ -39,7 +39,6 @@ class CreateAdmin extends Component {
     addNewAdmin = () => {
         this.setState({
             form_submited: false,
-            // insertId: body.insertId
         });
     }
 

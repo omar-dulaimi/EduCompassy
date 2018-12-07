@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CreateAdmin from './components/Admins/CreateAdmin.jsx';
 import SearchAdmin from './components/Admins/SearchAdmin.jsx';
 // import UpdateAdmin from './components/Admins/UpdateAdmin.jsx';
-// import DeleteAdmin from './components/Admins/DeleteAdmin.jsx';
+import DeleteAdmin from './components/Admins/DeleteAdmin.jsx';
 import ListAdmins from './components/Admins/ListAdmins.jsx';
 
 
@@ -39,6 +39,7 @@ class Admin extends Component {
                                     <Link to="/CreateAdmin"><p>Create Admin</p></Link>
                                     <Link to="/ListAdmins"><p>List Admins</p></Link>
                                     <Link to="/SearchAdmin"><p>Search Admin</p></Link>
+                                    <Link to="/DeleteAdmin"><p>Delete Admin</p></Link>
 
                                 </div>
                             </div>                
@@ -79,6 +80,7 @@ class Admin extends Component {
                         <Route exact path="/CreateAdmin" component={CreateAdmin} /> 
                         <Route exact path="/ListAdmins" component={ListAdmins} />
                         <Route exact path="/SearchAdmin" component={SearchAdmin} />
+                        <Route exact path="/DeleteAdmin" component={DeleteAdmin} />
 
                         <Route exact path="/CreateStudent" component={CreateStudent} /> 
                          

@@ -25,7 +25,6 @@ module.exports = {
                     err: err,
                 };
                 callback(errObj, null);
-                //res.end(JSON.stringify({canLog: false}));
             } else {
                 console.log("else: sqlResult ", sqlResult.email);
                 if (sqlResult !== undefined) {
@@ -35,7 +34,6 @@ module.exports = {
                         err: null,
                     };
                     callback(errObj, sqlResult);
-                // res.end(JSON.stringify({canLog: true}));
                 } else {
                     var errObj = {
                         // Type 3: Table is empty.
@@ -43,7 +41,6 @@ module.exports = {
                         err: 'Table is empty',
                     };
                     callback(errObj, null);
-                // res.end(JSON.stringify({canLog: false}));
                 }
             }
             
@@ -71,7 +68,7 @@ module.exports = {
                     err: err,
                 };
                 callback(errObj, null);
-                //res.end(JSON.stringify({canLog: false}));
+                
             } else {
                 console.log("else: sqlResult ", sqlResult);
                 if (sqlResult !== undefined) {
@@ -81,7 +78,6 @@ module.exports = {
                         err: null,
                     };
                     callback(errObj, sqlResult);
-                // res.end(JSON.stringify({canLog: true}));
                 } else {
                     var errObj = {
                         // Type 3: Table is empty.
@@ -89,7 +85,95 @@ module.exports = {
                         err: 'Table is empty',
                     };
                     callback(errObj, null);
-                // res.end(JSON.stringify({canLog: false}));
+                }
+            }
+            
+            }
+        });
+    },
+    
+    searchAdmins: function (req, callback) {
+        queryAdmins.searchAdmin(req, function (err, errType, sqlResult) {
+            if (errType===1) {
+                
+                var errObj = {
+                    // Type 1: DB err
+                    type: 1,
+                    err: err,
+                };
+                callback(errObj, null);
+            } else {
+            
+            // if (sqlResult === undefined) {
+                if (errType === 2) {
+                var errObj = {
+                    // Type 3: Query Error.
+                    type: 3,
+                    err: err,
+                };
+                callback(errObj, null);
+                
+            } else {
+                console.log("else: sqlResult ", sqlResult);
+                if (sqlResult !== undefined) {
+                    var errObj = {
+                        // Type 0: No errors.
+                        type: 0,
+                        err: null,
+                    };
+                    callback(errObj, sqlResult);
+                } else {
+                    var errObj = {
+                        // Type 3: Table is empty.
+                        type: 3,
+                        err: 'Table is empty',
+                    };
+                    callback(errObj, null);
+                }
+            }
+            
+            }
+        });
+    },
+
+    // Delet Admin By ID:
+
+    deleteAdmin: function (id, callback) {
+        queryAdmins.deleteAdmin(id, function (err, errType, sqlResult) {
+            if (errType===1) {
+                
+                var errObj = {
+                    // Type 1: DB err
+                    type: 1,
+                    err: err,
+                };
+                callback(errObj, null);
+            } else {
+            
+            // if (sqlResult === undefined) {
+                if (errType === 2) {
+                var errObj = {
+                    // Type 3: Query Error.
+                    type: 3,
+                    err: err,
+                };
+                callback(errObj, null);
+            } else {
+                console.log("else: sqlResult ", sqlResult);
+                if (sqlResult !== undefined) {
+                    var errObj = {
+                        // Type 0: No errors.
+                        type: 0,
+                        err: null,
+                    };
+                    callback(errObj, sqlResult);
+                } else {
+                    var errObj = {
+                        // Type 3: Table is empty.
+                        type: 3,
+                        err: 'Table is empty',
+                    };
+                    callback(errObj, null);
                 }
             }
             

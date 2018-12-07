@@ -22,8 +22,13 @@ app.get('/', (req, res) => {
   );
 });
 
+/**
+ *  Userid Table: 
+ * 
+ */
 
 var userid = require('./server/userid.js');
+
 app.post('/S_signin', (req, res) => {
   console.log(req.body);
   userid.queryUserID(req, res, function (err, sqlResult) {
@@ -39,7 +44,12 @@ app.post('/S_signin', (req, res) => {
 
 });
 
+/**
+ *  Admin Table: 
+ * 
+ */
 var admins = require('./server/admins.js');
+
 app.get('/S_ListAllAdmins', (req, res) => {
   console.log(req.body);
   admins.queryAdmins(req, res, function (err, sqlResult) {
@@ -55,7 +65,6 @@ app.get('/S_ListAllAdmins', (req, res) => {
 
 });
 
-var admins = require('./server/admins.js');
 app.post('/S_CreateAdmin', (req, res) => {
   console.log("Create Admins: ", req.body);
   admins.createAdmins(req, res, function (err, sqlResult) {
@@ -69,6 +78,34 @@ app.post('/S_CreateAdmin', (req, res) => {
 
   });
 
+});
+
+app.post('/S_SearchAdmin', (req, res) => {
+  console.log("S_SearchAdmin: ", req.body);
+  admins.searchAdmins(req, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+
+  });
+
+});
+
+app.post('/S_DeleteAdmin', (req, res) => {
+  console.log("S_DeleteAdmin: ", req.body.id);
+  admins.deleteAdmin(req.body.id, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+  });
 });
 
 // Omar Code:

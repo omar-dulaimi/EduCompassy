@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class SearchAdmin extends Component {
+class DeleteAdmin extends Component {
     state = {
         id: '',
         first_name: '',
@@ -22,17 +22,35 @@ class SearchAdmin extends Component {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({id: this.state.id, first_name: this.state.first_name, middle_names: this.state.middle_names, last_name: this.state.last_name, date_of_birth: this.state.date_of_birth, date_of_employment: this.state.date_of_employment, phone_number: this.state.phone_number, id_number: this.state.id_number }),
+            body: JSON.stringify({ id: this.state.id }),
         });
         const body = await response.text();
         console.log("handleSubmitPOST body: ", body);
         var body1 = JSON.parse(body)
         console.log("handleSubmitPOST body1: ", body1);
 
-        this.setState({ ListAdmins: body1});
+        this.setState({ ListAdmins: body1 });
         console.log("ListAdmins body: ", this.ListAdmins);
-        this.setState({form_submited: true });
-        
+        this.setState({ form_submited: true });
+
+    };
+
+    handleSubmitPOST_Delete = async e => {
+        e.preventDefault();
+        const response = await fetch('/S_DeleteAdmin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: this.state.id }),
+        });
+        const body = await response.text();
+        console.log("handleSubmitPOST body: ", body);
+        var body1 = JSON.parse(body)
+        console.log("handleSubmitPOST body1: ", body1);
+
+        this.setState({ form_submited: false });
+
     };
 
     render() {
@@ -41,9 +59,8 @@ class SearchAdmin extends Component {
             return (
 
                 <div>
-                    <h1>Search Admin:</h1>
+                    <h1>Delete Admin:</h1>
                     <div className="">
-                        <h3>Form Post:</h3>
                         <form onSubmit={this.handleSubmitPOST}>
 
                             <label htmlFor="id" className="">id: </label>
@@ -54,10 +71,10 @@ class SearchAdmin extends Component {
                                 placeholder="id number"
                                 value={this.state.id}
                                 onChange={e => this.setState({ id: e.target.value })}
-                                />
+                            />
                             <br />
 
-                            <label htmlFor="first_name" className="">First name: </label>
+                            {/* <label htmlFor="first_name" className="">First name: </label>
                             <input
                                 type="text"
                                 id="first_name"
@@ -132,9 +149,9 @@ class SearchAdmin extends Component {
                                 value={this.state.id_number}
                                 onChange={e => this.setState({ id_number: e.target.value })}
                                 />
-                            <br />
+                            <br /> */}
 
-                            <button type="submit">Submit</button>
+                            <button type="submit">Delete Admin</button>
                         </form>
 
                         <p>{this.state.responseToPost}</p>
@@ -162,6 +179,10 @@ class SearchAdmin extends Component {
                             }
 
                         </table>
+                        <h3>Are you sure you want Delete This Admin?</h3>
+                        <form onSubmit={this.handleSubmitPOST_Delete}>
+                            <button type="submit">Delete Admin</button>
+                        </form>
 
 
 
@@ -173,4 +194,4 @@ class SearchAdmin extends Component {
     }
 
 }
-export default SearchAdmin;
+export default DeleteAdmin;
