@@ -48,6 +48,19 @@ class Header extends Component {
                             </li>
 
 
+
+                            <li className={this.NavBarItemActive('admin')} onClick={this.handleNavBarActive.bind(this, 'admin')}>
+                                <Link className="nav-link" to="/admin">Admin</Link>
+                            </li>
+
+                            <li className={this.NavBarItemActive('teacher')} onClick={this.handleNavBarActive.bind(this, 'teacher')}>
+                                <Link className="nav-link" to="/teachers">Teacher</Link>
+                            </li>
+
+                            <li className={this.NavBarItemActive('parent')} onClick={this.handleNavBarActive.bind(this, 'parent')}>
+                                <Link className="nav-link" to="/parents">Parent</Link>
+                            </li>
+
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Users
