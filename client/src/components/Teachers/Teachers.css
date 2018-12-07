@@ -1,5 +1,5 @@
 .body {
-    color: #4f94e0;
+    color:black;
 }
 .myDropDown {
     position: relative;
@@ -12,7 +12,7 @@
     position: absolute;
     color:black;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
     padding: 12px 16px;
     z-index: 1;
 }
@@ -20,15 +20,17 @@
 .myDropDown:hover .myDropDown-content {
     display: block;
     color: black !important;
+    font-weight: bold;
 }
 #dashboard {
     position: relative;
 }
 div > span:hover {
-    color: !important;
+    color: black !important;
 } 
 a > p:hover {
     color:white !important;
+    font-weight: bold;
 }
 /* ----------------------------------------- */
             /* Teachers Page CSS */
