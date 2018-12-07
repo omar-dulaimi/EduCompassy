@@ -1,24 +1,14 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-// Admins Functions: ListAdmins
 import CreateAdmin from './components/Admins/CreateAdmin.jsx';
 import SearchAdmin from './components/Admins/SearchAdmin.jsx';
-// import UpdateAdmin from './components/Admins/UpdateAdmin.jsx';
 import DeleteAdmin from './components/Admins/DeleteAdmin.jsx';
 import ListAdmins from './components/Admins/ListAdmins.jsx';
-
-
-
-import Title from './components/Title.jsx';
 import CreateStudent from './components/Students/CreateStudent.jsx';
-import Parents from './components/Parents/CreateParent.jsx';
-
 import CreateTeacher from './components/Teachers/CreateTeacher.jsx';
 
 class Admin extends Component {
-
-
     render() {
         return (
             <Fragment>
@@ -66,26 +56,26 @@ class Admin extends Component {
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Chat</a>
+                                    <Link className="nav-link" to="/CreateStudent">Chat</Link>
                                 </li>
                             </ul>
                         </div>
 
+                        <Switch>
+                            <Route exact path="/CreateAdmin" component={CreateAdmin} />
+                            <Route exact path="/ListAdmins" component={ListAdmins} />
+                            <Route exact path="/SearchAdmin" component={SearchAdmin} />
+                            <Route exact path="/DeleteAdmin" component={DeleteAdmin} />
 
-                        <Route exact path="/Title" component={Title} />
-                        <Route exact path="/CreateAdmin" component={CreateAdmin} />
-                        <Route exact path="/ListAdmins" component={ListAdmins} />
-                        <Route exact path="/SearchAdmin" component={SearchAdmin} />
-                        <Route exact path="/DeleteAdmin" component={DeleteAdmin} />
+                            <Route exact path="/CreateStudent" component={CreateStudent} />
 
-                        <Route exact path="/CreateStudent" component={CreateStudent} />
-
-                        <Route exact path="/CreateTeacher" component={CreateTeacher} />
+                            <Route exact path="/CreateTeacher" component={CreateTeacher} />
+                        </Switch>
                     </div>
                 </Router>
             </Fragment>
         );
     }
-
 }
+
 export default Admin;
