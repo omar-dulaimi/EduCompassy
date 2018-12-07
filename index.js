@@ -22,9 +22,8 @@ app.get('/', (req, res) => {
   );
 });
 
-/**
+/*
  *  Userid Table: 
- * 
  */
 
 var userid = require('./server/userid.js');
@@ -44,9 +43,8 @@ app.post('/S_signin', (req, res) => {
 
 });
 
-/**
+/*
  *  Admin Table: 
- * 
  */
 var admins = require('./server/admins.js');
 
@@ -108,9 +106,8 @@ app.post('/S_DeleteAdmin', (req, res) => {
   });
 });
 
-// Omar Code:
-/////////////
-//Get a number fact from API and send it back to client
+// APIs:
+// Get a number fact from API and send it back to client
 app.get('/numberfact', (req, res) => {
   apis.getNumberFact((err, data) => {
     if (err) {
