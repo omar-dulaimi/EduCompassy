@@ -14,8 +14,6 @@ import Events from './ClassesComponents/Events.jsx';
 class Teachers extends Component {
     render() {
         return (
-            
-
             <Fragment>
                 <Router>
                     <div className="jumbotron jumbotron-fluid teachers">
@@ -26,15 +24,13 @@ class Teachers extends Component {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
                                     <div className="dropdown-menu">
-
-                                        <Link className="dropdown-item" to="/TimeTable"><a href="#time"><p>TimeTable</p></a></Link>
+                                        <Link className="dropdown-item" to="/TimeTable"><a href="time"><p>TimeTable</p></a></Link>
                                         <Link className="dropdown-item" to="/HomeWork"><a href="#"><p>Homework</p></a></Link>
                                         <Link className="dropdown-item" to="/Marks"><a href="#"><p>Student's Marks</p></a></Link>
                                         <Link className="dropdown-item" to="/WeeklyReports"><a href="#"><p>Weekly Reports</p></a></Link>
                                         <Link className="dropdown-item" to="/Events"><a href="#"><p>Events</p></a></Link>
                                     </div>
                                 </li>
-
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Students</a>
                                     <div className="dropdown-menu">
@@ -43,7 +39,6 @@ class Teachers extends Component {
                                         <Link className="dropdown-item" to="#"><a><p>Hello World!</p></a></Link>
                                     </div>
                                 </li>
-
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Parents</a>
                                     <div className="dropdown-menu">
@@ -52,7 +47,6 @@ class Teachers extends Component {
                                         <Link className="dropdown-item" to="#"><a><p>Something</p></a></Link>
                                     </div>
                                 </li>
-
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chatting</a>
                                     <div className="dropdown-menu">
@@ -67,7 +61,7 @@ class Teachers extends Component {
                             <img className="card-img-bottom" src="https://www.xdesk.com/blog/wp-content/uploads/2015/07/bigstock-Pupils-raising-hand-during-geo-83001707-700x200.jpg" alt="Card image cap" />
                         </div>
                         <Switch>
-                            <Route exact path="/timetable" id = "time" component={TimeTable} />
+                            <Route exact path="/timetable" id = "time"component={TimeTable} />
                             <Route exact path="/HomeWork" component={HomeWork} />
                             <Route exact path="/events" component={Events} />
                             <Route exact path="/marks" component={Marks} />
@@ -78,6 +72,5 @@ class Teachers extends Component {
             </Fragment>
         );
     }
-
 }
 export default Teachers;
