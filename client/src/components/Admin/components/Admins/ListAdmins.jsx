@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class ListAdmins extends Component {
     state = {
-        response: {},
+        ListAdmins: [],
     };
 
     /*
@@ -15,8 +15,8 @@ class ListAdmins extends Component {
     componentDidMount() {
         this.listAllAdmins()
             .then((res) => {
-                console.log(res)
-                // this.setState({ responseToGetAuto: res.express });
+                console.log("res Mount: ", res)
+                this.setState({ ListAdmins: res });
             })
             .catch(err => console.log(err));
     }
@@ -25,7 +25,7 @@ class ListAdmins extends Component {
     listAllAdmins = async () => {
         const response = await fetch('/S_ListAllAdmins');
         const body = await response.json();
-        console.log("S_ListAllAdmins: ", body);
+        // console.log("S_ListAllAdmins: ", body);
         if (response.status !== 200) throw Error(body.message);
         return body;
     };
@@ -35,7 +35,25 @@ class ListAdmins extends Component {
             <div>
                 <h1>Admins List:</h1>
                 <div className="">
-                
+                    <table >
+                        <tr>
+                            <th>id</th>
+                            <th>first_name</th>
+                            <th>middle_names</th>
+                            <th>last_name</th>
+                            <th>date_of_birth</th>
+                            <th>date_of_employment</th>
+                            <th>id_number</th>
+                        </tr>
+                        {
+                        this.state.ListAdmins.map((Admin, i) =><tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>
+                    )
+                        }
+
+                    </table>
+                    
+
+
                     {/* 
                     `id` INT NOT NULL AUTO_INCREMENT,
                     `first_name` VARCHAR(45) NULL,
