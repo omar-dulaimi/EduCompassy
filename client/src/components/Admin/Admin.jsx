@@ -25,67 +25,63 @@ class Admin extends Component {
                 <Router>
                     <div className="jumbotron jumbotron-fluid teachers">
                         <div className="container">
-                            <h1 className="display-4"> <strong>Admin Page:</strong> <small>example</small></h1>
-                            <p className="lead"> Something  Something  Something  Something  Something  Something </p>
-                            <div className="dropdown myDropDown">
-                                <h4> <span>Dashboard</span></h4>
-                            </div>                
-                            <div className="dropdown myDropDown">
-                                    <Link to="/Title"><p>Title</p></Link>
-                            </div> 
-                            <div className="dropdown myDropDown">
-                                <h5><span>Admins</span></h5>
-                                <div className="dropdown-content myDropDown-content">
-                                    <Link to="/CreateAdmin"><p>Create Admin</p></Link>
-                                    <Link to="/ListAdmins"><p>List Admins</p></Link>
-                                    <Link to="/SearchAdmin"><p>Search Admin</p></Link>
-                                    <Link to="/DeleteAdmin"><p>Delete Admin</p></Link>
+                            <h1 className="display-4"> <strong>Admin Dashboard</strong></h1>
+                            <ul className="nav nav-pills">
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admins</a>
+                                    <div className="dropdown-menu">
+                                        <Link className="dropdown-item" to="/CreateAdmin">Add New Admin</Link>
+                                        <Link className="dropdown-item" to="/ListAdmins">List Admins</Link>
+                                        <Link className="dropdown-item" to="/SearchAdmin">Find Admin</Link>
+                                        <Link className="dropdown-item" to="/DeleteAdmin">Delete Admin</Link>
+                                    </div>
+                                </li>
 
-                                </div>
-                            </div>                
-                            <div className="dropdown myDropDown">
-                                <h5><span>Teachers</span></h5>
-                                <div className="dropdown-content myDropDown-content">
-                                    <Link to="/CreateTeacher"><p>Create Teacher</p></Link>
-                                    <a><p>Hello World!</p></a>
-                                    <a><p>Hello World!</p></a>
-                                    <a><p>Hello World!</p></a>
-                                </div>
-                            </div>
-                            <div className="dropdown myDropDown">
-                                <h5><span>Students</span></h5>
-                                <div className="dropdown-content myDropDown-content">
-                                    <Link to="/CreateStudent"><p>Create Student</p></Link>
-                                    <a><p>Grades</p></a>
-                                    <a><p>Progress</p></a>
-                                    <a><p>Something</p></a>
-                                </div>
-                            </div>
-                            <div className="dropdown myDropDown">
-                                <h5><span>Parents</span></h5>
-                                <div className="dropdown-content myDropDown-content">
-                                    <Link to="/CreateParent"><p>Create Parent</p></Link>
-                                </div>
-                            </div>
-                            <div className="dropdown myDropDown">
-                                <h5><span>Chatting</span></h5>
-                                <div className="dropdown-content myDropDown-content">
-                                    <a><p>Chatting 1</p></a>
-                                    <a><p>Chatting 2</p></a>
-                                    <a><p>Chatting 3</p></a>
-                                </div>
-                            </div>
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teachers</a>
+                                    <div className="dropdown-menu">
+                                        <Link className="dropdown-item" to="/CreateTeacher">Add New Teacher</Link>
+                                        <Link className="dropdown-item" to="/CreateTeacher">List Teachers</Link>
+                                        <Link className="dropdown-item" to="/CreateTeacher">Find Teacher</Link>
+                                        <Link className="dropdown-item" to="/CreateTeacher">Delete Teacher</Link>
+                                    </div>
+                                </li>
+
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Students</a>
+                                    <div className="dropdown-menu">
+                                        <Link className="dropdown-item" to="/CreateStudent">Add New Student</Link>
+                                        <Link className="dropdown-item" to="/CreateStudent">Show Grades</Link>
+                                        <Link className="dropdown-item" to="/CreateStudent">Show Progress</Link>
+                                        <Link className="dropdown-item" to="/CreateStudent">Delete Student</Link>
+                                    </div>
+                                </li>
+
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Parents</a>
+                                    <div className="dropdown-menu">
+                                        <Link className="dropdown-item" to="/CreateStudent">Add New Parent</Link>
+                                        <Link className="dropdown-item" to="/CreateStudent">Show Children</Link>
+                                    </div>
+                                </li>
+
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Chat</a>
+                                </li>
+                            </ul>
                         </div>
-                        <Route exact path="/Title" component={Title} /> 
-                        <Route exact path="/CreateAdmin" component={CreateAdmin} /> 
+
+
+                        <Route exact path="/Title" component={Title} />
+                        <Route exact path="/CreateAdmin" component={CreateAdmin} />
                         <Route exact path="/ListAdmins" component={ListAdmins} />
                         <Route exact path="/SearchAdmin" component={SearchAdmin} />
                         <Route exact path="/DeleteAdmin" component={DeleteAdmin} />
 
-                        <Route exact path="/CreateStudent" component={CreateStudent} /> 
-                         
-                        <Route exact path="/CreateTeacher" component={CreateTeacher} />                  
-                    </div>  
+                        <Route exact path="/CreateStudent" component={CreateStudent} />
+
+                        <Route exact path="/CreateTeacher" component={CreateTeacher} />
+                    </div>
                 </Router>
             </Fragment>
         );
