@@ -27,7 +27,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
-var b = localStorage.getItem(token);
 
 console.log('local storage: ', b);
 
