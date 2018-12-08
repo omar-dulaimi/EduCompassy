@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Calendar from 'react-calendar'
+import SlideShow from '../SlideShow/SlideShow.jsx'
 
 class Home extends Component {
     state = {
@@ -28,24 +28,12 @@ class Home extends Component {
     render() {
         return (
             <Fragment>
-                <div className="row">
-                    <div className="col-md-2 ml-3">
-                        <div className="card border-primary mb-3 mt-3" style={{ width: '18rem', height: '350px' }}>
-                            <div className="card-body text-primary">
-                                <h5 className="card-title">Fun Number Facts</h5>
-                                <p className="card-text">{this.state.numberFact}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-md-8 mb-3 mt-3 ml-3">
-                        <Calendar
-                            onChange={this.onChange}
-                            value={this.state.date}
-                        />
+                <div className="container h-100">
+                    <div className="row h-100 justify-content-center align-items-center">
+                        <SlideShow />
                     </div>
                 </div>
-            </Fragment>
+            </Fragment >
         );
     }
 }
