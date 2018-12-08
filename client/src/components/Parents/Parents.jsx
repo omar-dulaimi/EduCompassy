@@ -76,120 +76,120 @@ class Parents extends Component {
 
     render() {
         return (
+
             <Fragment>
                 <Router>
                     <div>
-                        <div>
-                            <h1>Parents Page:</h1>
-                        </div>
-                        <div className="jumbotron jumbotron-fluid teachers">
+                        <div className="jumbotron jumbotron-fluid parents">
                             <div className="container">
-                                <div className="dropdown myDropDown">
-                                    <h4> <span>Dashboard</span></h4>
-                                </div>
-                                <div className="dropdown myDropDown">
-                                    <h5><span>Children </span></h5>
-                                    <ul>
-                                        <div className="dropdown-content myDropDown-content">
-                                            <div className="dropdown-submenu">
-                                                <li><a><p>Ahamed</p></a>
-                                                    <ul>
-                                                        <div className="dropdown myDropDown">
-                                                            <li><Link to="/timetable"><p>TimeTable</p></Link></li>
-                                                            <li><Link to="/events"><p>Events</p></Link></li>
-                                                            <li><Link to="/marks"><p>Marks</p></Link></li>
-                                                            <li><Link to="/weeklyreports"><p>WeeklyReports</p></Link></li>
-                                                            <li><Link to="/homework"><p>HomeWork</p></Link></li>
-                                                        </div>
-                                                    </ul>
-                                                </li>
-                                            </div>
-                                            <div className="dropdown-submenu">
-                                                <li><a><p>Khalid</p></a>
-                                                    <ul>
-                                                        <div className="dropdown myDropDown">
-                                                            <li><Link to="/timetable"><p>TimeTable</p></Link></li>
-                                                            <li><Link to="/events"><p>Events</p></Link></li>
-                                                            <li><Link to="/marks"><p>Marks</p></Link></li>
-                                                            <li><Link to="/weeklyreports"><p>WeeklyReports</p></Link></li>
-                                                            <li><Link to="/homework"><p>HomeWork</p></Link></li>
-                                                        </div>
-                                                    </ul>
+                                <h1 className="display-4"> <strong>Parents Page:</strong></h1>
 
-                                                </li>
+                                <ul className="nav nav-pills">
+                                    <li className="nav-item dropdown">
+                                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Children</a>
+                                        <ul>
+                                            <div className="dropdown-menu">
+                                                <div className="dropdown-submenu">
+                                                    <li ><a className="dropdown-item myitem"><p>Ahamed</p></a>
+                                                        <ul>
+                                                            <div className="dropdown-menu myDropDown">
+                                                                <li><Link to="/timetable" ><p>TimeTable</p></Link></li>
+                                                                <li><Link to="/events"><p>Events</p></Link></li>
+                                                                <li><Link to="/marks"><p>Marks</p></Link></li>
+                                                                <li><Link to="/weeklyreports"><p>WeeklyReports</p></Link></li>
+                                                                <li><Link to="/homework"><p>HomeWork</p></Link></li>
+
+                                                            </div>
+                                                        </ul>
+                                                    </li>
+                                                </div>
+
+                                                <div className="dropdown-submenu">
+                                                    <li ><a className="dropdown-item myitem" ><p>Khalid</p></a>
+                                                        <ul>
+                                                            <div className="dropdown-menu myDropDown">
+                                                                <li><Link to="/timetable"><p>TimeTable</p></Link></li>
+                                                                <li><Link to="/events"><p>Events</p></Link></li>
+                                                                <li><Link to="/marks"><p>Marks</p></Link></li>
+                                                                <li><Link to="/weeklyreports"><p>WeeklyReports</p></Link></li>
+                                                                <li><Link to="/homework"><p>HomeWork</p></Link></li>
+                                                            </div>
+                                                        </ul>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+
+                                    <li className="nav-item dropdown">
+                                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chatting</a>
+                                        <div className="dropdown-menu">
+                                            <Link className="dropdown-item" to="#"><a><p>Sarah:English</p></a></Link>
+                                            <Link className="dropdown-item" to="#"><a><p>Khalid:Math</p></a></Link>
+                                            <Link className="dropdown-item" to="#"><a><p>Omer:Arabic</p></a></Link>
+                                        </div>
+                                    </li>
+                                    <li className="nav-item">
+                                    <a className="  nav-link" data-toggle="modal" data-target="#exampleModal" href="#" role="button" aria-haspopup="true" aria-expanded="false">Complaints</a>
+                                    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div className="modal-dialog" role="document">
+                                            <div className="modal-content">
+                                                <div className="modal-header">
+                                                    <h5 className="modal-title" id="exampleModalLabel">New message</h5>
+                                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div className="modal-body">
+
+                                                    <div className="form-group">
+                                                        <label htmlFor="Parentes-name" className="col-form-label">Name</label>
+                                                        <input type="text" className="form-control" id="Parentes-name" placeholder="Name"
+                                                            value={this.state.parent_name}
+                                                            onChange={e => this.setState({ parent_name: e.target.value })}
+                                                            required autoFocus />
+                                                    </div>
+                                                    <div className="form-group">
+                                                        <label htmlFor="message-text" className="col-form-label">Title</label>
+                                                        <input type="text" className="form-control" id="Title-name" placeholder="Title"
+                                                            value={this.state.Title}
+                                                            onChange={e => this.setState({ Title: e.target.value })} />
+                                                    </div>
+
+                                                    <div className="form-group">
+                                                        <label htmlFor="message-text" className="col-form-label">Message:</label>
+                                                        <textarea className="form-control" id="message-text" placeholder="Message"
+                                                            value={this.state.Message}
+                                                            onChange={e => this.setState({ Message: e.target.value })}
+                                                        ></textarea>
+                                                    </div>
+                                                </div>
+                                                <div className="modal-footer">
+                                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleSubmitPOST}>Send message</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </ul>
-
-                                </div>
-
-                                <div className="dropdown myDropDown">
-                                    <h5><span>Chatting</span></h5>
-                                    <div className="dropdown-content myDropDown-content">
-                                        <a><p>Sarah:English</p></a>
-                                        <a><p>Khalid:Math</p></a>
-                                        <a><p>Omer:Arabic</p></a>
                                     </div>
-                                </div>
-                                <a className="  mybtn" data-toggle="modal" data-target="#exampleModal" >Complaints</a>
-                                <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div className="modal-dialog" role="document">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="exampleModalLabel">New message</h5>
-                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div className="modal-body">
-
-                                                <div className="form-group">
-                                                    <label htmlFor="Parentes-name" className="col-form-label">Name</label>
-                                                    <input type="text" className="form-control" id="Parentes-name" placeholder="Name"
-                                                        value={this.state.parent_name}
-                                                        onChange={e => this.setState({ parent_name: e.target.value })}
-                                                        required autoFocus />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="message-text" className="col-form-label">Title</label>
-                                                    <input type="text" className="form-control" id="Title-name" placeholder="Title"
-                                                        value={this.state.Title}
-                                                        onChange={e => this.setState({ Title: e.target.value })} />
-                                                </div>
-
-                                                <div className="form-group">
-                                                    <label htmlFor="message-text" className="col-form-label">Message:</label>
-                                                    <textarea className="form-control" id="message-text" placeholder="Message"
-                                                        value={this.state.Message}
-                                                        onChange={e => this.setState({ Message: e.target.value })}
-                                                    ></textarea>
-                                                </div>
-
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-info" data-dismiss="modal" onClick={this.handleSubmitPOST }>Send message</button>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
 
                         </div>
 
 
- 
-                    <Route exact path="/timetable" component={TimeTable} />
-                    <Route exact path="/events" component={Events} />
-                    <Route exact path="/marks" component={Marks} />
-                    <Route exact path="/weeklyreports" component={WeeklyReports} />
-                    <Route exact path="/homework" component={HomeWork} />
+                        {/* <div className="card">
+                            <img className="card-img-bottom" src="https://www.xdesk.com/blog/wp-content/uploads/2015/07/bigstock-Pupils-raising-hand-during-geo-83001707-700x200.jpg" alt="Card image cap" />
+                        </div> */}
 
+                        <Route exact path="/timetable" id="time" component={TimeTable} />
+                        <Route exact path="/HomeWork" component={HomeWork} />
+                        <Route exact path="/events" component={Events} />
+                        <Route exact path="/marks" component={Marks} />
+                        <Route exact path="/WeeklyReports" component={WeeklyReports} />
                     </div>
-                </Router>
 
+                </Router >
             </Fragment >
         );
     }
