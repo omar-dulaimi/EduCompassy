@@ -7,6 +7,9 @@ import DeleteAdmin from './components/Admins/DeleteAdmin.jsx';
 import ListAdmins from './components/Admins/ListAdmins.jsx';
 import CreateStudent from './components/Students/CreateStudent.jsx';
 import CreateTeacher from './components/Teachers/CreateTeacher.jsx';
+import DeleteTeacher from './components/Teachers/DeleteTeacher.jsx';
+import ListTeachers from './components/Teachers/ListTeachers.jsx';
+import SearchTeacher from './components/Teachers/SearchTeacher.jsx'
 
 class Admin extends Component {
     render() {
@@ -31,9 +34,9 @@ class Admin extends Component {
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teachers</a>
                                     <div className="dropdown-menu">
                                         <Link className="dropdown-item" to="/CreateTeacher">Add New Teacher</Link>
-                                        <Link className="dropdown-item" to="/CreateTeacher">List Teachers</Link>
-                                        <Link className="dropdown-item" to="/CreateTeacher">Find Teacher</Link>
-                                        <Link className="dropdown-item" to="/CreateTeacher">Delete Teacher</Link>
+                                        <Link className="dropdown-item" to="/ListTeachers">List Teachers</Link>
+                                        <Link className="dropdown-item" to="/SearchTeacher">Find Teacher</Link>
+                                        <Link className="dropdown-item" to="/DeleteTeacher">Delete Teacher</Link>
                                     </div>
                                 </li>
 
@@ -70,6 +73,9 @@ class Admin extends Component {
                             <Route exact path="/CreateStudent" component={CreateStudent} />
 
                             <Route exact path="/CreateTeacher" component={CreateTeacher} />
+                            <Route exact path="/ListTeachers" component={ListTeachers} />
+                            <Route exact path="/SearchTeacher" component={SearchTeacher} />
+                            <Route exact path="/DeleteTeacher" component={DeleteTeacher} />
                         </Switch>
                     </div>
                 </Router>
