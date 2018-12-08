@@ -11,6 +11,25 @@ class HomeWork extends Component {
                         <h1 className="display-4"> <strong>HomeWorks Page</strong> </h1>
                         <p className="lead"> Something  Something  Something  Something  Something  Something </p>
                         <div>
+                            <div className="btn-group">
+                                <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Grades
+                                </button>
+                                <div className="dropdown-menu">
+                                    <a className="dropdown-item" href="#">G 1</a>
+                                    <a className="dropdown-item" href="#">G 2</a>
+                                    <a className="dropdown-item" href="#">G 3</a>
+                                    <a className="dropdown-item" href="#">G 4</a>
+                                    <a className="dropdown-item" href="#">G 5</a>
+                                    <a className="dropdown-item" href="#">G 6</a>
+                                    <a className="dropdown-item" href="#">G 7</a>
+                                    <a className="dropdown-item" href="#">G 8</a>
+                                    <a className="dropdown-item" href="#">G 9</a>
+                                    <a className="dropdown-item" href="#">G 10</a>
+                                    <a className="dropdown-item" href="#">G 11</a>
+                                    <a className="dropdown-item" href="#">G 12</a>
+                                </div>
+                            </div>
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item active" aria-current="page"></li>
@@ -40,7 +59,6 @@ class HomeWork extends Component {
                                                         2 days ago
                                                      </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +83,6 @@ class HomeWork extends Component {
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">
                                                 <img className="card-img homeworkImg" src="https://www.celerion.com/wp-content/uploads/2011/12/biostatistics.jpg" />
-
                                             </div>
                                         </div>
                                     </div>
@@ -93,17 +110,11 @@ class HomeWork extends Component {
                                     <h5 className="card-title">Home Works Goes Here</h5>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </Fragment>
-
         )
     }
-
 }
 export default HomeWork;
-
-

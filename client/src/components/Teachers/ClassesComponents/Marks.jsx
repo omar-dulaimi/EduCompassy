@@ -11,37 +11,39 @@ class Marks extends Component {
                 <div className="jumbotron jumbotron-fluid ">
                     <div className="container">
                         <div>
-                            <h1>Marks Component</h1>
+                            <h1>Students' Results</h1>
                         </div>
-                        <p className="lead"> Something  Something  Something  Something  Something  Something </p>  
+                        <p className="lead"> Students' Results</p>  
                     </div>
-                    
-                    <div className="alert alert-light " role="alert">
-                        <p> <strong>Student's Name :</strong> Name </p>
-                        <p><strong>Student's Grade :</strong> Grade</p>
-                        <p><strong>Student's ID :</strong> ID</p>
-
-
-
-
-                        <div className="btn-group ">
-                            <button type="button" className="btn btn-primary ">Select Subject </button>
-                            <button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            </button>
-                            <div className="dropdown-menu">
-                                <a className="dropdown-item " href="#">Math</a>
-                                <a className="dropdown-item" href="#">Science</a>
-                                <a className="dropdown-item" href="#">Art</a>
-                                <a className="dropdown-item" href="#">History</a>
-                                <a className="dropdown-item" href="#">English</a>
-                                <a className="dropdown-item" href="#">Music</a>
-
-                                <div className="dropdown-divider" />
-                                <a className="dropdown-item" href="#">More </a>
-                            </div>
+                    <div className="alert alert-dark " role="alert">
+                        <form>
+                            <label htmlFor="Student_name" className="" > Student's Name  </label>
+                            <input type="text" id="student_name" placeholder="Student Name" />
+                            <label htmlFor="student_grade" className=""> Students's Grade  </label>
+                            <input type="text" id="student_grade" placeholder="Student_grade"/>
+                            <label htmlFor="subject_id" className="" placeholder="Subject ID"> Subject ID  </label>
+                            <input type="text" id="subject_id"/>
+                            <br />
+                            <button type="submit">Results</button>
+                        </form>
+                        <div>
+                            <table className="table">
+                                <thead className="thead-dark">
+                                    <tr>
+                                        <th scope="col">Subject ID</th>
+                                        <th scope="col">Math</th>
+                                        <th scope="col">Science</th>
+                                        <th scope="col">Music</th>
+                                        <th scope="col">History</th>
+                                        <th scope="col">English</th>
+                                        <th scope="col">Arts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                                 
+                    </div>  
                 </div>
             </Fragment>
         )

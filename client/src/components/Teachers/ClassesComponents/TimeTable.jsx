@@ -10,8 +10,8 @@ class TimeTable extends Component {
             <Fragment>
             
                 <div className="timetable">
-                <h1 className="myHeading1">TimeTable Component</h1>
-                    <p className="lead myHeading1">   Something  Something  Something </p>
+                <h1 className="myHeading1">TimeTable </h1>
+                    <p className="lead myHeading1">  TimeTable Goes Here </p>
                     <div>
                         <table className="myTimetable">
                             <thead>
