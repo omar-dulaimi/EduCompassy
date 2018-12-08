@@ -1,12 +1,8 @@
-.mymenu :hover{
-    color: #7f1894 !important;
-    /* background-color: #75ecd8; */
-}
 
 
-
- .body {
-    color: #4f94e0;
+a > p:hover {
+    color:rgb(9, 7, 12) !important;
+   
 }
 .myDropDown {
     position: relative;
@@ -14,77 +10,58 @@
     padding: 25px 50px 20px 50px;
 }
 
- .myDropDown-content {
-    display: none;
-    position: absolute;
-    color:black;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-} 
-
- .myDropDown:hover .myDropDown-content {
-    display: block;
-    color: black !important;
-} 
-#dashboard {
-    position: relative;
-}
-
-a > p:hover {
-    color:blueviolet !important;
-}
-/*style for complians*/
-.mybtn:hover {
-    background-color: white !important;
-    color: black !important;
-    font-size: 1.25rem !important;
-    font-weight: 450%;text-decoration: none;
-
-   
-}
 /*style for children*/
 
   ul li {
 list-style-type: none;
   }
 
-  .myDropDown ul ul {
+   ul .dropdown-menu ul {
       position: relative;
       margin-left: 125px;
       top: 0px;
       text-decoration: none;
      
   }
+
+  ul .mydropdown-menu li {
+    position: relative;
+    margin-left: 125px;
+    top: 0px;
+    text-decoration: none;
+  }
 /* items in submenu */
   ul .myDropDown {
       display: none;
       position: absolute;
-      /* background-color: aqua; */
       color: black !important;
       width:200px;
       text-decoration: none;
       line-height: 5px;
-      top: -90px;
-      left: 50px;
+      top:-70px;
+      left:75px;
   }
 
 
 
-  .dropdown-submenu li:hover ul .myDropDown {
-      display: block;
-      background-color: #7f1894 !important;
-      text-decoration: none;
-     
-  }
+ 
 
 /* items in dropdown menu */
-  ul .myDropDown-content p {
-      text-decoration: none;
-      width:0px;
-      height:25px;
-      line-height: 5px;
-      /* background-color: aqua !important; */
-     
+.dropdown-submenu li:hover ul .myDropDown {
+    display: block;
+    text-decoration: none;
+   
+}
+
+
+  ul .mydropdown-menu{
+    line-height: 150px;
   }
+
+  .myitem{
+     
+     background-clip: content-box; 
+
+   
+  }
+ 
