@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+var jwt = require('jsonwebtoken');
+
 
 const bodyParser = require('body-parser');
 const app = express();
@@ -24,6 +26,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   );
 // });
 
+var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+var b = localStorage.getItem(token);
+
+console.log('local storage: ', b);
+
+console.log('token: ', token);
+
+
+
 /*complaints table*/
 var complaints = require('./server/complaints.js');
 
@@ -34,6 +45,7 @@ app.post('/S_complaints', (req, res) => {
       console.log('if (err): ', err);
       res.end(JSON.stringify({ canLog: false }));
     } else {
+
       console.log('else : Can Log ', sqlResult.insertId);
       res.end(JSON.stringify({ insertId: sqlResult.insertId }));
     }
@@ -56,11 +68,23 @@ app.post('/S_signin', (req, res) => {
     } else {
       console.log('else : Can Log ', sqlResult);
       res.end(JSON.stringify({ canLog: true }));
+
+      console.log("else: sqlResult ", sqlResult.email);
+      if (req.body.inputPassword === sqlResult.password) {
+        if (sqlResult.email === 'a@a.com') {
+          res.end(JSON.stringify({ canLog: true, email: sqlResult.email, user: 'admin' }));
+        } else if (sqlResult.email === 'b@b.com') {
+          res.end(JSON.stringify({ canLog: true, email: sqlResult.email, user: 'teacher' }));
+        } else {
+          res.end(JSON.stringify({ canLog: true, email: sqlResult.email, user: 'parent' }));
+        }
+      } else {
+        res.end(JSON.stringify({ canLog: false }));
+      }
     }
-
   });
-
 });
+
 
 /*
  *  Admin Table: 
