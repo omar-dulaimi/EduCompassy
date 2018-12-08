@@ -23,7 +23,7 @@ module.exports = {
    
 
 
-    console.log("else - Insert * From admin: ")
+    console.log("else - Insert * From complaints: ")
     console.log("queryAdBody: ", body);
     var qu = `INSERT INTO complaints (parent_name, title, message) VALUES (?, ?, ?)`;
     var quValue = [body.parent_name, body.Title, body.Message ]
