@@ -145,7 +145,7 @@ class SearchAdmin extends Component {
 
                         <div className="form-group row justify-content-center">
                             <div className="col-sm-10 ">
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <button type="submit" className="btn btn-warning">Search</button>
                             </div>
                         </div>
 
@@ -156,7 +156,7 @@ class SearchAdmin extends Component {
             return (
                 <div>
                     <div className="container mt-3">
-                        <h3 className="row justify-content-center mb-3 mt-5">Results found</h3>
+                        <h3 className="row justify-content-center mb-3 mt-5">{this.state.ListAdmins.length > 0 ? 'Admins found' : 'No such admin'}</h3>
                         <table className="table">
                             <thead className="thead-dark">
                                 <tr>
@@ -179,8 +179,7 @@ class SearchAdmin extends Component {
                 </div>
             );
         }
-
     }
-
 }
+
 export default SearchAdmin;
