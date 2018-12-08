@@ -4,7 +4,7 @@ var mysql = require('mysql');
 
 if (process.env.NODE_ENV === 'production') {
   var conn = mysql.createConnection({
-    host: "db4free.net:3306",
+    host: "db4free.net",
     user: "clustererjsx",
     password: "N$d5^3J3*fDS",
     database: "educompassy"
