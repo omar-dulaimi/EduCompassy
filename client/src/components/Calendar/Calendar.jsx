@@ -11,11 +11,13 @@ class Calendar extends Component {
     render() {
         return (
             <Fragment>
-                <div className="col-md">
-                    <CalendarReact
-                        onChange={this.onChange}
-                        value={this.state.date}
-                    />
+                <div className="container h-100">
+                    <div className="row h-100 justify-content-center align-items-center">
+                        <CalendarReact
+                            onChange={this.onChange}
+                            value={this.state.date}
+                        />
+                    </div>
                 </div>
             </Fragment>
         );
