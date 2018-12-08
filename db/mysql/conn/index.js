@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
     host: "localhost",
     user: "root",
     password: "rootroot",
-    database: "EduCompassy"
+    database: "educompassy"
   });
 }
 module.exports = conn;
