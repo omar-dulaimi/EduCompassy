@@ -179,8 +179,8 @@ class Parents extends Component {
 
 
                         {/* <div className="card">
-                            <img className="card-img-bottom" src="https://www.xdesk.com/blog/wp-content/uploads/2015/07/bigstock-Pupils-raising-hand-during-geo-83001707-700x200.jpg" alt="Card image cap" />
-                        </div> */}
+                            <img className="card-img-bottom" src="" alt="Card image cap" />
+                         </div>  */}
 
                         <Route exact path="/timetable" id="time" component={TimeTable} />
                         <Route exact path="/HomeWork" component={HomeWork} />
