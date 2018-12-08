@@ -61,13 +61,17 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`parents` (
 --   `teacher_id` INT NOT NULL,
 --   PRIMARY KEY (`id`));
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`.`complian` (
+CREATE TABLE IF NOT EXISTS `EduCompassy`.`complaints` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `date_of_send` VARCHAR(45) NULL,
   `date_of_process` VARCHAR(45) NULL,
-  `parents_id` INT NOT NULL,
-  `teacher_id` INT NOT NULL,
+  `parents_id` INT  NULL,
+  `teacher_id` INT  NULL,
+  `parent_name` VARCHAR(45) NULL,
+  `title`VARCHAR(45) NULL,
+  `message`VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+ 
 
 -- CREATE TABLE IF NOT EXISTS `EduCompassy`.`userid` (
 -- 	`id` int NOT NULL AUTO_INCREMENT,

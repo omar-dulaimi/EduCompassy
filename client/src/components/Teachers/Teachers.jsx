@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 
-import './Teachers.css';
+//import './Teachers.css';
 import TimeTable from './ClassesComponents/TimeTable.jsx';
 import HomeWork from './ClassesComponents/HomeWork.jsx';
 import Marks from './ClassesComponents/Marks.jsx';
@@ -16,7 +16,7 @@ class Teachers extends Component {
         return (
             <Fragment>
                 <Router>
-                    <div className="jumbotron jumbotron-fluid teachers">
+                    <div className="jumbotron jumbotron-fluid ">
                         <div className="container">
                             <h1 className="display-4"> <strong>Teachers Page</strong></h1>
                             <p className="lead"> Teachers Page Goes Here</p>
@@ -24,11 +24,11 @@ class Teachers extends Component {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
                                     <div className="dropdown-menu">
-                                        <Link className="dropdown-item" to="/TimeTable"><a href="time"><p>TimeTable</p></a></Link>
-                                        <Link className="dropdown-item" to="/HomeWork"><a href="#"><p>Homework</p></a></Link>
-                                        <Link className="dropdown-item" to="/Marks"><a href="#"><p>Student's Marks</p></a></Link>
-                                        <Link className="dropdown-item" to="/WeeklyReports"><a href="#"><p>Weekly Reports</p></a></Link>
-                                        <Link className="dropdown-item" to="/Events"><a href="#"><p>Events</p></a></Link>
+                                        <Link className="dropdown-item" to="/TimeTable"><p>TimeTable</p></Link>
+                                        <Link className="dropdown-item" to="/HomeWork"><p>Homework</p></Link>
+                                        <Link className="dropdown-item" to="/Marks"><p>Student's Marks</p></Link>
+                                        <Link className="dropdown-item" to="/WeeklyReports"><p>Weekly Reports</p></Link>
+                                        <Link className="dropdown-item" to="/Events"><p>Events</p></Link>
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown">

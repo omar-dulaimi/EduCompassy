@@ -8,6 +8,8 @@ import About from '../About/About.jsx';
 import Signin from '../Signin/Signin.jsx';
 import Header from '../Header/Header.jsx'
 import Home from '../Home/Home.jsx'
+import Calendar from '../Calendar/Calendar.jsx';
+import NumberFacts from '../NumberFacts/NumberFacts.jsx'
 
 import './App.css';
 
@@ -26,6 +28,8 @@ class App extends Component {
             <Route path="/admin" component={Admin} />
             <Route path="/teachers" component={Teachers} />
             <Route path="/parents" component={Parents} />
+            <Route path="/calendar" component={Calendar} />
+            <Route path="/numberfacts" component={NumberFacts} />
           </Switch>
         </Fragment>
       </Router>

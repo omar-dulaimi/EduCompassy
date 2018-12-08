@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-class SearchAdmin extends Component {
+class SearchTeacher extends Component {
     state = {
         id: '',
         first_name: '',
@@ -10,13 +10,13 @@ class SearchAdmin extends Component {
         date_of_employment: '',
         phone_number: '',
         id_number: '',
-        ListAdmins: [],
+        ListTeachers: [],
         form_submited: false,
     };
 
     handleSubmitPOST = async e => {
         e.preventDefault();
-        const response = await fetch('/S_SearchAdmin', {
+        const response = await fetch('/S_SearchTeacher', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,8 +28,8 @@ class SearchAdmin extends Component {
         var body1 = JSON.parse(body)
         console.log("handleSubmitPOST body1: ", body1);
 
-        this.setState({ ListAdmins: body1 });
-        console.log("ListAdmins body: ", this.ListAdmins);
+        this.setState({ ListTeachers: body1 });
+        console.log("ListTeachers body: ", this.ListTeachers);
         this.setState({ form_submited: true });
 
     };
@@ -40,7 +40,7 @@ class SearchAdmin extends Component {
             return (
                 <div className="container mt-5">
                     <form onSubmit={this.handleSubmitPOST}>
-                        <h3 className="row justify-content-center mb-5">Find an admin</h3>
+                        <h3 className="row justify-content-center mb-5">Find a teacher</h3>
                         <div className="form-group row justify-content-center">
                             <label htmlFor="first_name" className="col-sm-2 col-form-label">First Name</label>
                             <div className="col-sm-5">
@@ -156,7 +156,7 @@ class SearchAdmin extends Component {
             return (
                 <div>
                     <div className="container mt-3">
-                        <h3 className="row justify-content-center mb-3 mt-5">{this.state.ListAdmins.length > 0 ? 'Admins found' : 'No such admin'}</h3>
+                        <h3 className="row justify-content-center mb-3 mt-5">{this.state.ListTeachers.length > 0 ? 'Teachers found' : 'No such teacher'}</h3>
                         <table className="table">
                             <thead className="thead-dark">
                                 <tr>
@@ -171,7 +171,7 @@ class SearchAdmin extends Component {
                             </thead>
                             <tbody>
                                 {
-                                    this.state.ListAdmins.map((Admin, i) => <tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>)
+                                    this.state.ListTeachers.map((Teacher, i) => <tr><td>{Teacher.id}</td><td>{Teacher.first_name}</td><td>{Teacher.middle_names}</td><td>{Teacher.last_name}</td><td>{Teacher.date_of_birth}</td><td>{Teacher.date_of_employment}</td><td>{Teacher.id_number}</td></tr>)
                                 }
                             </tbody>
                         </table>
@@ -182,4 +182,4 @@ class SearchAdmin extends Component {
     }
 }
 
-export default SearchAdmin;
+export default SearchTeacher;

@@ -15,29 +15,17 @@ class Marks extends Component {
                         </div>
                         <p className="lead"> Students' Results</p>  
                     </div>
-                    
                     <div className="alert alert-dark " role="alert">
-                       
                         <form>
-
-                            <label htmlFor="Student_name" className=""> Student's Name  </label>
+                            <label htmlFor="Student_name" className="" > Student's Name  </label>
                             <input type="text" id="student_name" placeholder="Student Name" />
                             <label htmlFor="student_grade" className=""> Students's Grade  </label>
-                            <input type="text" id="student_grade"/>
-                            <label htmlFor="subject_id" className=""> Subject ID  </label>
+                            <input type="text" id="student_grade" placeholder="Student_grade"/>
+                            <label htmlFor="subject_id" className="" placeholder="Subject ID"> Subject ID  </label>
                             <input type="text" id="subject_id"/>
                             <br />
-
                             <button type="submit">Results</button>
                         </form>
-
-
-
-
-
-
-
-
                         <div>
                             <table className="table">
                                 <thead className="thead-dark">
@@ -55,8 +43,7 @@ class Marks extends Component {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                                 
+                    </div>  
                 </div>
             </Fragment>
         )

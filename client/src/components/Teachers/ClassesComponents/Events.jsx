@@ -10,6 +10,16 @@ class Events extends Component {
                 <h1 className="myHeading1">Events Component</h1>
                     <div >
                         <div className="tableCenter">
+                        <form>
+                                <label htmlFor="event_name" className="" > Event Name  </label>
+                                <input type="text" id="event_type" placeholder="Event Name" />
+                                <label htmlFor="event_date" className=""> Event Date </label>
+                                <input type="text" id="event_date" placeholder="yyyy/mm/dd" />
+                                <label htmlFor="event_id" className="" placeholder="Event ID"> Event ID  </label>
+                                <input type="text" id="event_id" />
+                                <button type="submit">Add</button>
+                                <br/>
+                            </form>
                             <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li className="nav-item">
                                     <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sunday</a>

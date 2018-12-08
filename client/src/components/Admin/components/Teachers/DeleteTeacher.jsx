@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from "react-router-dom";
 
-class DeleteAdmin extends Component {
+class DeleteTeacher extends Component {
     state = {
         id: '',
         first_name: '',
@@ -11,13 +10,13 @@ class DeleteAdmin extends Component {
         date_of_employment: '',
         phone_number: '',
         id_number: '',
-        adminToDelete: [],
+        teacherToDelete: [],
         form_submited: false,
     };
 
     handleSubmitPOST = async e => {
         e.preventDefault();
-        const response = await fetch('/S_SearchAdmin', {
+        const response = await fetch('/S_SearchTeacher', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,15 +28,15 @@ class DeleteAdmin extends Component {
         var body1 = JSON.parse(body)
         console.log("handleSubmitPOST body1: ", body1);
 
-        this.setState({ adminToDelete: body1 });
-        console.log("adminToDelete body: ", this.adminToDelete);
+        this.setState({ teacherToDelete: body1 });
+        console.log("teacherToDelete body: ", this.teacherToDelete);
         this.setState({ form_submited: true });
 
     };
 
     handleSubmitPOST_Delete = async e => {
         e.preventDefault();
-        const response = await fetch('/S_DeleteAdmin', {
+        const response = await fetch('/S_DeleteTeacher', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +50,6 @@ class DeleteAdmin extends Component {
 
         this.setState({ form_submited: false });
         alert('Success!');
-        return <Redirect to={{ pathname: '/ListAdmins' }} />
     };
 
     render() {
@@ -59,7 +57,7 @@ class DeleteAdmin extends Component {
         if (!this.state.form_submited) {
             return (
                 <div>
-                    <h3 className="row justify-content-center mb-3 mt-5">Delete admin</h3>
+                    <h3 className="row justify-content-center mb-3 mt-5">Delete teacher</h3>
                     <div className="container mt-5">
                         <form onSubmit={this.handleSubmitPOST}>
                             <div className="form-group row justify-content-center">
@@ -91,7 +89,7 @@ class DeleteAdmin extends Component {
             return (
                 <div>
                     <div className="container mt-3">
-                        <h3 className="row justify-content-center mb-3 mt-5">{this.state.adminToDelete.length > 0 ? 'Admin found' : 'Admin not found'}</h3>
+                        <h3 className="row justify-content-center mb-3 mt-5">{this.state.teacherToDelete.length > 0 ? 'Teacher found' : 'Teacher not found'}</h3>
                         <table className="table">
                             <thead className="thead-dark">
                                 <tr>
@@ -106,13 +104,13 @@ class DeleteAdmin extends Component {
                             </thead>
                             <tbody>
                                 {
-                                    this.state.adminToDelete.map((Admin, i) => <tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>)
+                                    this.state.teacherToDelete.map((Teacher, i) => <tr><td>{Teacher.id}</td><td>{Teacher.first_name}</td><td>{Teacher.middle_names}</td><td>{Teacher.last_name}</td><td>{Teacher.date_of_birth}</td><td>{Teacher.date_of_employment}</td><td>{Teacher.id_number}</td></tr>)
                                 }
                             </tbody>
                         </table>
                         {
-                            this.state.adminToDelete.length > 0 ? <div>
-                                <h3 className="row justify-content-left mb-3 mt-5 ml-2">Are you sure you want delete this admin?</h3>
+                            this.state.teacherToDelete.length > 0 ? <div>
+                                <h3 className="row justify-content-left mb-3 mt-5 ml-2">Are you sure you want delete this teacher?</h3>
                                 <div className="container mt-5">
                                     <form onSubmit={this.handleSubmitPOST_Delete}>
                                         <div className="form-group row justify-content-center">
@@ -131,4 +129,4 @@ class DeleteAdmin extends Component {
     }
 }
 
-export default DeleteAdmin;
+export default DeleteTeacher;
