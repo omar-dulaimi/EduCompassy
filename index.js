@@ -26,11 +26,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   );
 // });
 
-var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+// var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
 
-console.log('local storage: ', b);
 
-console.log('token: ', token);
+// console.log('token: ', token);
 
 
 
