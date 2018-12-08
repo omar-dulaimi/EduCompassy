@@ -9,25 +9,25 @@ class HomeWork extends Component {
                 <div className="jumbotron jumbotron-fluid ">
                     <div className="container ">
                         <h1 className="display-4"> <strong>HomeWorks Page</strong> </h1>
-                        <p className="lead"> Something  Something  Something  Something  Something  Something </p>
+                        <p className="lead">Homework page Goes Here</p>
                         <div>
                             <div className="btn-group">
                                 <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Grades
                                 </button>
                                 <div className="dropdown-menu">
-                                    <a className="dropdown-item" href="#">G 1</a>
-                                    <a className="dropdown-item" href="#">G 2</a>
-                                    <a className="dropdown-item" href="#">G 3</a>
-                                    <a className="dropdown-item" href="#">G 4</a>
-                                    <a className="dropdown-item" href="#">G 5</a>
-                                    <a className="dropdown-item" href="#">G 6</a>
-                                    <a className="dropdown-item" href="#">G 7</a>
-                                    <a className="dropdown-item" href="#">G 8</a>
-                                    <a className="dropdown-item" href="#">G 9</a>
-                                    <a className="dropdown-item" href="#">G 10</a>
-                                    <a className="dropdown-item" href="#">G 11</a>
-                                    <a className="dropdown-item" href="#">G 12</a>
+                                    <a className="dropdown-item" >G 1</a>
+                                    <a className="dropdown-item" >G 2</a>
+                                    <a className="dropdown-item" >G 3</a>
+                                    <a className="dropdown-item" >G 4</a>
+                                    <a className="dropdown-item" >G 5</a>
+                                    <a className="dropdown-item" >G 6</a>
+                                    <a className="dropdown-item" >G 7</a>
+                                    <a className="dropdown-item" >G 8</a>
+                                    <a className="dropdown-item" >G 9</a>
+                                    <a className="dropdown-item" >G 10</a>
+                                    <a className="dropdown-item" >G 11</a>
+                                    <a className="dropdown-item" >G 12</a>
                                 </div>
                             </div>
                             <nav aria-label="breadcrumb">
@@ -95,6 +95,14 @@ class HomeWork extends Component {
                                         </div>
                                     </div>
                                     <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">English</button>
+                                    <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div className="modal-dialog modal-lg">
+                                            <div className="modal-content">
+                                                <img className="card-img homeworkImg" src="https://www.celerion.com/wp-content/uploads/2011/12/biostatistics.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" className="btn btn-warning myDropDown" data-toggle="modal" data-target=".bd-example-modal-lg">Chemsitry</button>
                                     <div className="modal fade bd-example-modal-lg" tabIndex={-1} role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div className="modal-dialog modal-lg">
                                             <div className="modal-content">

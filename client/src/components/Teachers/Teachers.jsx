@@ -34,17 +34,16 @@ class Teachers extends Component {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Students</a>
                                     <div className="dropdown-menu">
-                                        <Link className="dropdown-item" to="#"><a><p>Hello World!</p></a></Link>
-                                        <Link className="dropdown-item" to="#"><a><p>Hello World!</p></a></Link>
-                                        <Link className="dropdown-item" to="#"><a><p>Hello World!</p></a></Link>
+                                        <Link className="dropdown-item" to="#"><a><p>List Students</p></a></Link>
+                                        <Link className="dropdown-item" to="#"><a><p>Search Student</p></a></Link>
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Parents</a>
                                     <div className="dropdown-menu">
-                                        <Link className="dropdown-item" to="#"><a><p>Grades</p></a></Link>
-                                        <Link className="dropdown-item" to="#"><a><p>Progress</p></a></Link>
-                                        <Link className="dropdown-item" to="#"><a><p>Something</p></a></Link>
+                                        <Link className="dropdown-item" to="#"><a><p>Students' Marks</p></a></Link>
+                                        <Link className="dropdown-item" to="#"><a><p>WeeklyReports</p></a></Link>
+                                        <Link className="dropdown-item" to="#"><a><p>Events</p></a></Link>
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown">
