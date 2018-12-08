@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /*complaints table*/
 var complaints = require('./server/complaints.js');
 
-app.post('/S_complaints',(req, res) =>{
+app.post('/S_complaints', (req, res) => {
   console.log(req.body);
   complaints.queryComplaints(req, res, function (err, sqlResult) {
     if (err.type) {
@@ -35,7 +35,7 @@ app.post('/S_complaints',(req, res) =>{
       res.end(JSON.stringify({ canLog: false }));
     } else {
       console.log('else : Can Log ', sqlResult.insertId);
-      res.end(JSON.stringify({ insertId: sqlResult.insertId}));
+      res.end(JSON.stringify({ insertId: sqlResult.insertId }));
     }
 
   });
@@ -125,6 +125,71 @@ app.post('/S_DeleteAdmin', (req, res) => {
   });
 });
 
+
+/*
+ *  Teacher Table: 
+ */
+var teachers = require('./server/teachers.js');
+
+app.get('/S_ListAllTeachers', (req, res) => {
+  console.log(req.body);
+  teachers.queryTeachers(req, res, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+
+  });
+
+});
+
+app.post('/S_CreateTeacher', (req, res) => {
+  console.log("Create Teacher: ", req.body);
+  teachers.createTeachers(req, res, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+
+  });
+
+});
+
+app.post('/S_SearchTeacher', (req, res) => {
+  console.log("S_SearchTeacher: ", req.body);
+  teachers.searchTeachers(req, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+
+  });
+
+});
+
+app.post('/S_DeleteTeacher', (req, res) => {
+  console.log("S_DeleteTeacher: ", req.body.id);
+  teachers.deleteTeachers(req.body.id, function (err, sqlResult) {
+    if (err.type) {
+      console.log('if (err): ', err);
+      res.end(JSON.stringify(err));
+    } else {
+      console.log('else : List of  ', sqlResult);
+      res.end(JSON.stringify(sqlResult));
+    }
+  });
+});
+
+
 // APIs:
 // Get a number fact from API and send it back to client
 app.get('/numberfact', (req, res) => {
@@ -144,7 +209,7 @@ if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'client/build')));
   // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
+  app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
