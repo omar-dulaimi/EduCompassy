@@ -1,10 +1,10 @@
 
 
-CREATE SCHEMA IF NOT EXISTS `EduCompassy` DEFAULT CHARACTER SET utf16 COLLATE utf16_bin;
+CREATE SCHEMA IF NOT EXISTS `educompassy` DEFAULT CHARACTER SET utf16 COLLATE utf16_bin;
 
-USE EduCompassy;
+USE educompassy;
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`. `timetable` (
+CREATE TABLE IF NOT EXISTS `educompassy`. `timetable` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `room` varchar(10) NOT NULL,
   `subject` varchar(30) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`. `timetable` (
 );
 
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`.`events` (
+CREATE TABLE IF NOT EXISTS `educompassy`.`events` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `eventID` INT NOT NULL,
   `eventType` varchar(20) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`events` (
 );
 
     
-CREATE TABLE IF NOT EXISTS `EduCompassy`. `reports` (
+CREATE TABLE IF NOT EXISTS `educompassy`. `reports` (
   `report_id` INTEGER NOT NULL AUTO_INCREMENT,
   `date` DATE NOT NULL,
   `report_name` VARCHAR(256) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`. `reports` (
   PRIMARY KEY (`report_id`)
 );
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`. `homework` (
+CREATE TABLE IF NOT EXISTS `educompassy`. `homework` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `teacher_id` INTEGER NOT NULL,
   `class_id` INTEGER NOT NULL ,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`. `homework` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`. `marks` (
+CREATE TABLE IF NOT EXISTS `educompassy`. `marks` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `date` DATE NOT NULL,
   `teacher_id` INTEGER NOT NULL,

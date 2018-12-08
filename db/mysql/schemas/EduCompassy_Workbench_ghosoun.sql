@@ -1,10 +1,10 @@
 
 
-CREATE SCHEMA IF NOT EXISTS `EduCompassy` DEFAULT CHARACTER SET utf16 COLLATE utf16_bin;
+CREATE SCHEMA IF NOT EXISTS `educompassy` DEFAULT CHARACTER SET utf16 COLLATE utf16_bin;
 
-USE EduCompassy;
+USE educompassy;
 
--- CREATE TABLE IF NOT EXISTS `EduCompassy`.`teachers` (
+-- CREATE TABLE IF NOT EXISTS `educompassy`.`teachers` (
 --   `id` INT NOT NULL AUTO_INCREMENT,
 --   `first_name` VARCHAR(45) NULL,
 --   `middle_names` VARCHAR(45) NULL,
@@ -15,7 +15,7 @@ USE EduCompassy;
 --   `id_number` INT NOT NULL,
 --   PRIMARY KEY (`id`));
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`.`parents` (
+CREATE TABLE IF NOT EXISTS `educompassy`.`parents` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `middle_names` VARCHAR(45) NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`parents` (
   `id_number` INT NOT NULL,
   PRIMARY KEY (`id`));
 
--- CREATE TABLE IF NOT EXISTS `EduCompassy`.`students` (
+-- CREATE TABLE IF NOT EXISTS `educompassy`.`students` (
 --   `id` INT NOT NULL AUTO_INCREMENT,
 --   `first_name` VARCHAR(45) NULL,
 --   `middle_names` VARCHAR(45) NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`parents` (
 --   `id_number` INT NULL,
 --   PRIMARY KEY (`id`));
 
--- CREATE TABLE IF NOT EXISTS `EduCompassy`.`admin` (
+-- CREATE TABLE IF NOT EXISTS `educompassy`.`admin` (
 --   `id` INT NOT NULL AUTO_INCREMENT,
 --   `first_name` VARCHAR(45) NULL,
 --   `middle_names` VARCHAR(45) NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`parents` (
 --   `id_number` INT NOT NULL,
 --   PRIMARY KEY (`id`));
 
--- CREATE TABLE IF NOT EXISTS `EduCompassy`.`classes` (
+-- CREATE TABLE IF NOT EXISTS `educompassy`.`classes` (
 --   `id` INT NOT NULL AUTO_INCREMENT,
 --   `name` VARCHAR(45) NULL,
 --   `date_of_start` VARCHAR(45) NULL,
@@ -55,13 +55,13 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`parents` (
 --   `teacher_id` INT NOT NULL,
 --   PRIMARY KEY (`id`));
 
--- CREATE TABLE IF NOT EXISTS `EduCompassy`.`subject` (
+-- CREATE TABLE IF NOT EXISTS `educompassy`.`subject` (
 --   `id` INT NOT NULL AUTO_INCREMENT,
 --   `name` VARCHAR(45) NULL,
 --   `teacher_id` INT NOT NULL,
 --   PRIMARY KEY (`id`));
 
-CREATE TABLE IF NOT EXISTS `EduCompassy`.`complaints` (
+CREATE TABLE IF NOT EXISTS `educompassy`.`complaints` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `date_of_send` VARCHAR(45) NULL,
   `date_of_process` VARCHAR(45) NULL,
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `EduCompassy`.`complaints` (
   PRIMARY KEY (`id`));
  
 
--- CREATE TABLE IF NOT EXISTS `EduCompassy`.`userid` (
+-- CREATE TABLE IF NOT EXISTS `educompassy`.`userid` (
 -- 	`id` int NOT NULL AUTO_INCREMENT,
 -- 	`userid` varchar(45) NOT NULL,
 -- 	`email` varchar(45) NOT NULL,
