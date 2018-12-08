@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class DeleteAdmin extends Component {
     state = {
@@ -11,7 +11,7 @@ class DeleteAdmin extends Component {
         date_of_employment: '',
         phone_number: '',
         id_number: '',
-        ListAdmins: [],
+        adminToDelete: [],
         form_submited: false,
     };
 
@@ -29,8 +29,8 @@ class DeleteAdmin extends Component {
         var body1 = JSON.parse(body)
         console.log("handleSubmitPOST body1: ", body1);
 
-        this.setState({ ListAdmins: body1 });
-        console.log("ListAdmins body: ", this.ListAdmins);
+        this.setState({ adminToDelete: body1 });
+        console.log("adminToDelete body: ", this.adminToDelete);
         this.setState({ form_submited: true });
 
     };
@@ -50,148 +50,85 @@ class DeleteAdmin extends Component {
         console.log("handleSubmitPOST body1: ", body1);
 
         this.setState({ form_submited: false });
-
+        alert('Success!');
+        return <Redirect to={{ pathname: '/ListAdmins' }} />
     };
 
     render() {
 
         if (!this.state.form_submited) {
             return (
-
                 <div>
-                    <h1>Delete Admin:</h1>
-                    <div className="">
+                    <h3 className="row justify-content-center mb-3 mt-5">Delete admin</h3>
+                    <div className="container mt-5">
                         <form onSubmit={this.handleSubmitPOST}>
+                            <div className="form-group row justify-content-center">
+                                <label htmlFor="id_number" className="col-sm-2 col-form-label">ID Number</label>
+                                <div className="col-sm-5">
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        placeholder="ID Number"
+                                        id="id"
+                                        inputProps={{ min: "0000000000", max: "9999999999", step: "1" }}
+                                        value={this.state.id}
+                                        onChange={e => this.setState({ id: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                            </div>
 
-                            <label htmlFor="id" className="">id: </label>
-                            <input
-                                type="text"
-                                id="id"
-                                className=""
-                                placeholder="id number"
-                                value={this.state.id}
-                                onChange={e => this.setState({ id: e.target.value })}
-                            />
-                            <br />
-
-                            {/* <label htmlFor="first_name" className="">First name: </label>
-                            <input
-                                type="text"
-                                id="first_name"
-                                className=""
-                                placeholder="First name"
-                                value={this.state.first_name}
-                                onChange={e => this.setState({ first_name: e.target.value })}
-                                />
-                            <br />
-
-                            <label htmlFor="middle_names" className="">Middle names: </label>
-                            <input
-                                type="text"
-                                id="middle_names"
-                                className=""
-                                placeholder="Middle names"
-                                value={this.state.middle_names}
-                                onChange={e => this.setState({ middle_names: e.target.value })}
-                                />
-                            <br />
-
-                            <label htmlFor="last_name" className="">Last name: </label>
-                            <input
-                                type="text"
-                                id="last_name"
-                                className=""
-                                placeholder="Last name"
-                                value={this.state.last_name}
-                                onChange={e => this.setState({ last_name: e.target.value })}
-                                />
-                            <br />
-
-                            <label htmlFor="date_of_birth" className="">Date of Birth: </label>
-                            <input
-                                type="text"
-                                id="date_of_birth"
-                                className=""
-                                placeholder="Date of Birth"
-                                value={this.state.date_of_birth}
-                                onChange={e => this.setState({ date_of_birth: e.target.value })}
-                                />
-                            <br />
-
-                            <label htmlFor="date_of_employment" className="">Date Of Employment: </label>
-                            <input
-                                type="text"
-                                id="date_of_employment"
-                                className=""
-                                placeholder="Date Of Employment"
-                                value={this.state.date_of_employment}
-                                onChange={e => this.setState({ date_of_employment: e.target.value })}
-                                />
-                            <br />
-
-                            <label htmlFor="phone_number" className="">Phone Number: </label>
-                            <input
-                                type="text"
-                                id="phone_number"
-                                className=""
-                                placeholder="Phone Number"
-                                value={this.state.phone_number}
-                                onChange={e => this.setState({ phone_number: e.target.value })}
-                                />
-                            <br />
-
-                            <label htmlFor="id_number" className="">ID Number: </label>
-                            <input
-                                type="text"
-                                id="id_number"
-                                className=""
-                                placeholder="ID Number"
-                                value={this.state.id_number}
-                                onChange={e => this.setState({ id_number: e.target.value })}
-                                />
-                            <br /> */}
-
-                            <button type="submit">Delete Admin</button>
+                            <div className="form-group row justify-content-center">
+                                <div className="col-sm-10 ">
+                                    <button type="submit" className="btn btn-info">Find</button>
+                                </div>
+                            </div>
                         </form>
-
-                        <p>{this.state.responseToPost}</p>
                     </div>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <h1>Admins List:</h1>
-                    <div className="">
-                        <table >
-                            <tr>
-                                <th>id</th>
-                                <th>first_name</th>
-                                <th>middle_names</th>
-                                <th>last_name</th>
-                                <th>date_of_birth</th>
-                                <th>date_of_employment</th>
-                                <th>id_number</th>
-                            </tr>
-                            {
-                                this.state.ListAdmins.map((Admin, i) => <tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>
-                                )
-                            }
-
+                    <div className="container mt-3">
+                        <h3 className="row justify-content-center mb-3 mt-5">{this.state.adminToDelete.length > 0 ? 'Admin found' : 'Admin not found'}</h3>
+                        <table className="table">
+                            <thead className="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Middle Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Date of Birth</th>
+                                    <th scope="col">Date of Employment</th>
+                                    <th scope="col">ID Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    this.state.adminToDelete.map((Admin, i) => <tr><td>{Admin.id}</td><td>{Admin.first_name}</td><td>{Admin.middle_names}</td><td>{Admin.last_name}</td><td>{Admin.date_of_birth}</td><td>{Admin.date_of_employment}</td><td>{Admin.id_number}</td></tr>)
+                                }
+                            </tbody>
                         </table>
-                        <h3>Are you sure you want Delete This Admin?</h3>
-                        <form onSubmit={this.handleSubmitPOST_Delete}>
-                            <button type="submit">Delete Admin</button>
-                        </form>
-
-
-
+                        {
+                            this.state.adminToDelete.length > 0 ? <div>
+                                <h3 className="row justify-content-left mb-3 mt-5 ml-2">Are you sure you want delete this admin?</h3>
+                                <div className="container mt-5">
+                                    <form onSubmit={this.handleSubmitPOST_Delete}>
+                                        <div className="form-group row justify-content-center">
+                                            <div className="col-sm-10 ">
+                                                <button type="submit" className="btn btn-danger">Delete</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> : ''
+                        }
                     </div>
                 </div>
             );
         }
-
     }
-
 }
+
 export default DeleteAdmin;
