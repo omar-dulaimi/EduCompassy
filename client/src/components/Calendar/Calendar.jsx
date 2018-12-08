@@ -11,7 +11,7 @@ class Calendar extends Component {
     render() {
         return (
             <Fragment>
-                <div className="container h-100">
+                <div className="container h-100 mt-5">
                     <div className="row h-100 justify-content-center align-items-center">
                         <CalendarReact
                             onChange={this.onChange}
