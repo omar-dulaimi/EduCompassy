@@ -17,8 +17,7 @@ class Events extends Component {
                                 <input type="text" id="event_date" placeholder="yyyy/mm/dd" />
                                 <label htmlFor="event_id" className="" placeholder="Event ID"> Event ID  </label>
                                 <input type="text" id="event_id" />
-                                <button type="submit">Add</button>
-                                <br/>
+                                <button type="submit">Add Event</button>
                             </form>
                             <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li className="nav-item">

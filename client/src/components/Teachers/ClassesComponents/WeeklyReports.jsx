@@ -9,7 +9,16 @@ class WeeklyReports extends Component {
                 <div className="jumbotron jumbotron-fluid ">
                     <div className="container ">
                         <h1 className="display-4"> <strong>Weekly Reports</strong></h1>
-                        <p className="lead"> Something  Something  Something  Something  Something  Something </p>
+                        <p className="lead"> Your Kid's WeeklyReport</p>
+                        <form>
+                            <label htmlFor="Student_name" className="" > Student's Name  </label>
+                            <input type="text" id="student_name" placeholder="Student Name" />
+                            <label htmlFor="student_grade" className=""> Students's Grade  </label>
+                            <input type="text" id="student_grade" placeholder="Student_grade" />
+                            <label htmlFor="subject_id" className="" placeholder="Subject ID"> Subject ID  </label>
+                            <input type="text" id="subject_id" />
+                            <button type="submit">View Report</button>
+                        </form>
                         <div>
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
@@ -28,8 +37,11 @@ class WeeklyReports extends Component {
                             <img className="card-img homeworkImg" src="https://www.nedlands.wa.gov.au/sites/default/files/styles/top_img/public/iStock_000010466267Large.jpg?itok=I4YlSvJX" />
                             <div className="card-img-overlay">
                                 <h5 className="card-title">Reports Goes Here</h5>
+                                
                             </div>
+                            
                         </div>
+                        
                         <div className="accordion" id="accordionExample">
                             <div className="card">
                                 <div className="card-header" id="headingOne">
